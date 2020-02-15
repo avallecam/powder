@@ -11,7 +11,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 status](https://www.r-pkg.org/badges/version/powder)](https://cran.r-project.org/package=powder)
 <!-- badges: end -->
 
-The goal of powder is to …
+The goal of powder is to create tidy output tables and plots from power
+and sample size estimations.
 
 ## Installation
 
