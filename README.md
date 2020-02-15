@@ -20,7 +20,7 @@ You can install the developing version of powder using:
 
 ``` r
 if(!require("devtools")) install.packages("devtools")
-devtools::install_github("avallecam/avallecam")
+devtools::install_github("avallecam/powder")
 ```
 
 <!--
