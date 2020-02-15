@@ -23,11 +23,22 @@ The goal of powder is to ...
 
 ## Installation
 
+You can install the developing version of powder using:
+
+```r
+if(!require("devtools")) install.packages("devtools")
+devtools::install_github("avallecam/avallecam")
+```
+
+<!--
+
 You can install the released version of powder from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("powder")
 ```
+
+-->
 
 ## Example
 
@@ -37,6 +48,8 @@ This is a basic example which shows you how to solve a common problem:
 library(powder)
 ## basic example code
 ```
+
+<!--
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
@@ -53,3 +66,5 @@ plot(pressure)
 ```
 
 In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+
+-->
