@@ -11,12 +11,16 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 status](https://www.r-pkg.org/badges/version/powder)](https://cran.r-project.org/package=powder)
 <!-- badges: end -->
 
-The goal of powder is to create tidy output tables and plots from power
-and sample size estimations.
+The goal of `powder` is to complement **power** and **sample size**
+calculations:
+
+  - for more than one set of parameters, and
+
+  - create tidy output tables and plots from them.
 
 ## Installation
 
-You can install the developing version of powder using:
+You can install the developing version of `powder` using:
 
 ``` r
 if(!require("devtools")) install.packages("devtools")
@@ -44,7 +48,7 @@ install.packages("powder")
     of all input parameters using `purrr::pmap`.
 
   - `pwr_plot`: create a `ggplot` with input parameters and calculated
-    value (smaple size, power or effect size)
+    value (sample size, power or effect size)
 
 ## Example
 
@@ -156,3 +160,32 @@ eg2 %>%
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+
+# Description
+
+  - maintainer: Andree Valle Campos [(twitter)](twitter.com/avallecam)
+
+  - citation:
+
+<!-- end list -->
+
+``` r
+citation("powder")
+#> Warning in citation("powder"): no date field in DESCRIPTION file of package
+#> 'powder'
+#> Warning in citation("powder"): could not determine year for 'powder' from
+#> package DESCRIPTION file
+#> 
+#> To cite package 'powder' in publications use:
+#> 
+#>   Andree Valle-Campos (NA). powder: powder: A pwr and stats::power
+#>   Companion. R package version 0.0.0.9000.
+#> 
+#> A BibTeX entry for LaTeX users is
+#> 
+#>   @Manual{,
+#>     title = {powder: powder: A pwr and stats::power Companion},
+#>     author = {Andree Valle-Campos},
+#>     note = {R package version 0.0.0.9000},
+#>   }
+```

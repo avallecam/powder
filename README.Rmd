@@ -20,11 +20,15 @@ knitr::opts_chunk$set(
 [![CRAN status](https://www.r-pkg.org/badges/version/powder)](https://cran.r-project.org/package=powder)
 <!-- badges: end -->
 
-The goal of powder is to create tidy output tables and plots from power and sample size estimations.
+The goal of `powder` is to complement __power__ and __sample size__ calculations:
+
+- for more than one set of parameters, and
+
+- create tidy output tables and plots from them.  
 
 ## Installation
 
-You can install the developing version of powder using:
+You can install the developing version of `powder` using:
 
 ```r
 if(!require("devtools")) install.packages("devtools")
@@ -49,7 +53,7 @@ install.packages("powder")
 
 - `pwr_tidy`: creates a `broom::tidy()` output from the calculations of all input parameters using `purrr::pmap`.
 
-- `pwr_plot`: create a `ggplot` with input parameters and calculated value (smaple size, power or effect size)
+- `pwr_plot`: create a `ggplot` with input parameters and calculated value (sample size, power or effect size)
 
 ## Example
 
