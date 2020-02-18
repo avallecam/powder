@@ -44,27 +44,60 @@ install.packages("powder")
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example,eval=FALSE}
+```{r example,eval=TRUE,message=FALSE}
+library(tidyverse)
+library(magrittr)
+library(broom)
+library(pwr)
 library(powder)
-## basic example code
 ```
 
-<!--
+```{r}
+diff <- 10
+sigma <- 10
+delta <- diff/sigma
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
+pwr.t.test(d = delta, power = 0.8, type = "one.sample") %>% tidy()
+# power.t.test(d = delta, power = 0.8, type = "one.sample") %>% tidy()
+# pwr.t.test(d = delta, power = 0.8, type = "one.sample") %>% plot()
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
 
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
+```{r}
+# stata
+# power onemean 20, diff(10 20 30) sd(10 12.5 15)
+eg1 <- pwr_grid(n = NULL,
+                diff = c(10,20,30),
+                sigma = c(10,12.5,15),
+                d = NULL,
+                sig.level = 0.05,
+                power = 0.8,
+                type = "one.sample",
+                alternative = "two.sided")
+#create tidytable
+eg1 %>% pwr_tidy(test_function = pwr.t.test)
+#create ggplot
+eg1 %>%
+  pwr_tidy(test_function = pwr.t.test) %>%
+  pwr_plot(x = diff,y = n,group = sigma)
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+```{r}
+# stata
+# power onemean 20, diff(5 (5) 15) sd(10) n(10 (2) 20)
+eg2 <- pwr_grid(n = seq(from = 10,to = 20,by = 2),
+                diff = seq(from = 5,to = 15,by = 5),
+                sigma = 10,
+                d = NULL,
+                sig.level = 0.05,
+                #power = 0.8,
+                type = "one.sample",
+                alternative = "two.sided")
+#create tidytable
+eg2 %>% pwr_tidy(test_function = pwr.t.test)
+#create ggplot
+eg2 %>%
+  pwr_tidy(test_function = pwr.t.test) %>%
+  pwr_plot(x = n,y = power,group=diff)
+```
 
--->

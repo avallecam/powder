@@ -1,14 +1,15 @@
 Package: powder
-Title: What the Package Does (One Line, Title Case)
+Title: powder: A pwr and stats::power Companion
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Andree",
+           family = "Valle-Campos",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+           email = "avallecam@gmail.com",
+           comment = c(ORCID = "0000-0002-7779-481X"))
+Description: Create tables and plot of power and sample size calculations from a range of required parameters. All of the parameters accepts a range or sequence of numbers.
 License: MIT + file LICENSE
+Imports: dplyr, tidyr, broom, magrittr, pwr
 Suggests: 
     testthat
 Encoding: UTF-8
