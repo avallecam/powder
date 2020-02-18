@@ -172,14 +172,10 @@ eg2 %>%
 
 ``` r
 citation("powder")
-#> Warning in citation("powder"): no date field in DESCRIPTION file of package
-#> 'powder'
-#> Warning in citation("powder"): could not determine year for 'powder' from
-#> package DESCRIPTION file
 #> 
 #> To cite package 'powder' in publications use:
 #> 
-#>   Andree Valle-Campos (NA). powder: Complemetary Tidy Functions
+#>   Andree Valle-Campos (2020). powder: Complemetary Tidy Functions
 #>   For pwr and stats::power. R package version 0.0.0.9000.
 #> 
 #> A BibTeX entry for LaTeX users is
@@ -187,6 +183,7 @@ citation("powder")
 #>   @Manual{,
 #>     title = {powder: Complemetary Tidy Functions For pwr and stats::power},
 #>     author = {Andree Valle-Campos},
+#>     year = {2020},
 #>     note = {R package version 0.0.0.9000},
 #>   }
 ```
