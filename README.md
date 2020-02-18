@@ -163,7 +163,8 @@ eg2 %>%
 
 # Description
 
-  - maintainer: Andree Valle Campos [(twitter)](twitter.com/avallecam)
+  - maintainer: Andree Valle Campos
+    [(twitter)](https://twitter.com/avallecam)
 
   - citation:
 
