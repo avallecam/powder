@@ -1,6 +1,6 @@
-#' @title powder: complemetary tidy functions for pwr and stats::power
+#' @title powder: Complemetary Tidy Functions for Power Analysis using pwr and stats::power
 #'
-#' @description Create tables and plot of power and sample size calculations from a range of required parameters. All of the parameters accepts a range or sequence of numbers.
+#' @description Create tables and plots for power and sample size calculations from a range of required parameters. All of the parameters accepts a range or sequence of numbers.
 #'
 #' @describeIn pwr_grid
 #'

@@ -95,6 +95,7 @@ eg1 <- pwr_grid(n = NULL,
                 power = 0.8,
                 type = "one.sample",
                 alternative = "two.sided")
+
 #create tidytable
 eg1 %>% pwr_tidy(test_function = pwr.t.test)
 #> # A tibble: 9 x 9
@@ -109,6 +110,7 @@ eg1 %>% pwr_tidy(test_function = pwr.t.test)
 #> 7    30  10   one.sample two.sided   3     <pwr.htst>  3.14      0.05   0.8
 #> 8    30  12.5 one.sample two.sided   2.4   <pwr.htst>  3.64      0.05   0.8
 #> 9    30  15   one.sample two.sided   2     <pwr.htst>  4.22      0.05   0.8
+
 #create ggplot
 eg1 %>%
   pwr_tidy(test_function = pwr.t.test) %>%
@@ -130,6 +132,7 @@ eg2 <- pwr_grid(n = seq(from = 10,to = 20,by = 2),
                 #power = 0.8,
                 type = "one.sample",
                 alternative = "two.sided")
+
 #create tidytable
 eg2 %>% pwr_tidy(test_function = pwr.t.test)
 #> # A tibble: 18 x 9
@@ -153,6 +156,7 @@ eg2 %>% pwr_tidy(test_function = pwr.t.test)
 #> 16     5    10 one.sample two.sided     0.5 <pwr.hts~    20      0.05 0.565
 #> 17    10    10 one.sample two.sided     1   <pwr.hts~    20      0.05 0.989
 #> 18    15    10 one.sample two.sided     1.5 <pwr.hts~    20      0.05 1.000
+
 #create ggplot
 eg2 %>%
   pwr_tidy(test_function = pwr.t.test) %>%
@@ -161,7 +165,7 @@ eg2 %>%
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
-# Description
+## Description
 
   - maintainer: Andree Valle Campos
     [(twitter)](https://twitter.com/avallecam)
@@ -176,12 +180,13 @@ citation("powder")
 #> To cite package 'powder' in publications use:
 #> 
 #>   Andree Valle-Campos (2020). powder: Complemetary Tidy Functions
-#>   For pwr and stats::power. R package version 0.0.0.9000.
+#>   for Power Analysis using pwr and stats::power. R package version
+#>   0.0.0.9000.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
 #>   @Manual{,
-#>     title = {powder: Complemetary Tidy Functions For pwr and stats::power},
+#>     title = {powder: Complemetary Tidy Functions for Power Analysis using pwr and stats::power},
 #>     author = {Andree Valle-Campos},
 #>     year = {2020},
 #>     note = {R package version 0.0.0.9000},

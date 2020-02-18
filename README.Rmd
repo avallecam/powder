@@ -94,8 +94,10 @@ eg1 <- pwr_grid(n = NULL,
                 power = 0.8,
                 type = "one.sample",
                 alternative = "two.sided")
+
 #create tidytable
 eg1 %>% pwr_tidy(test_function = pwr.t.test)
+
 #create ggplot
 eg1 %>%
   pwr_tidy(test_function = pwr.t.test) %>%
@@ -115,15 +117,17 @@ eg2 <- pwr_grid(n = seq(from = 10,to = 20,by = 2),
                 #power = 0.8,
                 type = "one.sample",
                 alternative = "two.sided")
+
 #create tidytable
 eg2 %>% pwr_tidy(test_function = pwr.t.test)
+
 #create ggplot
 eg2 %>%
   pwr_tidy(test_function = pwr.t.test) %>%
   pwr_plot(x = n,y = power,group=diff)
 ```
 
-# Description
+## Description
 
 - maintainer: Andree Valle Campos [(twitter)](https://twitter.com/avallecam)
 

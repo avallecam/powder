@@ -1,5 +1,5 @@
 Package: powder
-Title: Complemetary Tidy Functions For pwr and stats::power
+Title: Complemetary Tidy Functions for Power Analysis using pwr and stats::power
 Version: 0.0.0.9000
 Date: 2020-02-18
 Authors@R: 
