@@ -165,6 +165,11 @@ eg2 %>%
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
+## References
+
+Stephane Champely (2018). pwr: Basic Functions for Power Analysis. R
+package version 1.2-2. <https://CRAN.R-project.org/package=pwr>
+
 ## Description
 
   - maintainer: Andree Valle Campos

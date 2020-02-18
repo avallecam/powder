@@ -127,6 +127,12 @@ eg2 %>%
   pwr_plot(x = n,y = power,group=diff)
 ```
 
+## References
+
+Stephane Champely (2018). pwr: Basic Functions for Power
+  Analysis. R package version 1.2-2.
+  https://CRAN.R-project.org/package=pwr
+
 ## Description
 
 - maintainer: Andree Valle Campos [(twitter)](https://twitter.com/avallecam)
@@ -136,4 +142,3 @@ eg2 %>%
 ```{r}
 citation("powder")
 ```
-
