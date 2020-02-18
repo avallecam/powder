@@ -1,4 +1,4 @@
-#' @title powder: a pwr and stats::power companion
+#' @title powder: complemetary tidy functions for pwr and stats::power
 #'
 #' @description Create tables and plot of power and sample size calculations from a range of required parameters. All of the parameters accepts a range or sequence of numbers.
 #'

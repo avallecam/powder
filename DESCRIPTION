@@ -1,5 +1,5 @@
 Package: powder
-Title: powder: A pwr and stats::power Companion
+Title: Complemetary Tidy Functions For pwr and stats::power
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Andree",

@@ -12,6 +12,7 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
+
 # powder
 
 <!-- badges: start -->
@@ -116,5 +117,15 @@ eg2 %>% pwr_tidy(test_function = pwr.t.test)
 eg2 %>%
   pwr_tidy(test_function = pwr.t.test) %>%
   pwr_plot(x = n,y = power,group=diff)
+```
+
+# Description
+
+- maintainer: Andree Valle Campos [(twitter)](twitter.com/avallecam)
+
+- citation:
+
+```{r}
+citation("powder")
 ```
 
