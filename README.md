@@ -179,13 +179,13 @@ citation("powder")
 #> 
 #> To cite package 'powder' in publications use:
 #> 
-#>   Andree Valle-Campos (NA). powder: powder: A pwr and stats::power
-#>   Companion. R package version 0.0.0.9000.
+#>   Andree Valle-Campos (NA). powder: Complemetary Tidy Functions
+#>   For pwr and stats::power. R package version 0.0.0.9000.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
 #>   @Manual{,
-#>     title = {powder: powder: A pwr and stats::power Companion},
+#>     title = {powder: Complemetary Tidy Functions For pwr and stats::power},
 #>     author = {Andree Valle-Campos},
 #>     note = {R package version 0.0.0.9000},
 #>   }

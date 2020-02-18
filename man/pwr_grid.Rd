@@ -4,7 +4,7 @@
 \alias{pwr_grid}
 \alias{pwr_tidy}
 \alias{pwr_plot}
-\title{powder: a pwr and stats::power companion}
+\title{powder: complemetary tidy functions for pwr and stats::power}
 \usage{
 pwr_grid(n = NULL, diff = NULL, sigma = NULL, d = NULL,
   sig.level = NULL, power = NULL, type = NULL, alternative = NULL)
