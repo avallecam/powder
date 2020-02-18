@@ -1,6 +1,7 @@
 Package: powder
 Title: Complemetary Tidy Functions For pwr and stats::power
 Version: 0.0.0.9000
+Date: 2020-02-18
 Authors@R: 
     person(given = "Andree",
            family = "Valle-Campos",
