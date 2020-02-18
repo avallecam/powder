@@ -33,6 +33,19 @@ install.packages("powder")
 
 -->
 
+## Structure
+
+`powder` consist of three main functions:
+
+  - `pwr_grid`: creates a tibble from all combination of input
+    parameters using `tidyr::expand_grid`.
+
+  - `pwr_tidy`: creates a `broom::tidy()` output from the calculations
+    of all input parameters using `purrr::pmap`.
+
+  - `pwr_plot`: create a `ggplot` with input parameters and calculated
+    value (smaple size, power or effect size)
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
@@ -47,6 +60,8 @@ library(powder)
 #> when loading 'powder'
 ```
 
+### with one set of parameters
+
 ``` r
 diff <- 10
 sigma <- 10
@@ -60,6 +75,10 @@ pwr.t.test(d = delta, power = 0.8, type = "one.sample") %>% tidy()
 # power.t.test(d = delta, power = 0.8, type = "one.sample") %>% tidy()
 # pwr.t.test(d = delta, power = 0.8, type = "one.sample") %>% plot()
 ```
+
+### with more than one set of parameters
+
+#### sample size
 
 ``` r
 # stata
@@ -93,6 +112,8 @@ eg1 %>%
 ```
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+
+#### power
 
 ``` r
 # stata
