@@ -3,6 +3,11 @@
 
 # powder
 
+**Author:** [Andree Valle Campos](https://twitter.com/avallecam)
+<a href="https://orcid.org/0000-0002-7779-481X" target="orcid.widget">
+<image class="orcid" src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" height="16"></a>
+<br/> **License:** [MIT](https://opensource.org/licenses/MIT)<br/>
+
 <!-- badges: start -->
 
 [![Lifecycle:
@@ -10,6 +15,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![CRAN
 status](https://www.r-pkg.org/badges/version/powder)](https://cran.r-project.org/package=powder)
 <!-- badges: end -->
+
+## Overview
 
 The goal of `powder` is to complement **power** and **sample size**
 calculations:
@@ -56,6 +63,7 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(tidyverse)
+#> Warning: package 'ggplot2' was built under R version 3.6.2
 library(magrittr)
 library(broom)
 library(pwr)
@@ -170,14 +178,7 @@ eg2 %>%
 Stephane Champely (2018). pwr: Basic Functions for Power Analysis. R
 package version 1.2-2. <https://CRAN.R-project.org/package=pwr>
 
-## Description
-
-  - maintainer: Andree Valle Campos
-    [(twitter)](https://twitter.com/avallecam)
-
-  - citation:
-
-<!-- end list -->
+## Citation
 
 ``` r
 citation("powder")

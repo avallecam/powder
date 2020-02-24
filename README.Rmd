@@ -15,10 +15,17 @@ knitr::opts_chunk$set(
 
 # powder
 
+**Author:** [Andree Valle Campos](https://twitter.com/avallecam) <a href="https://orcid.org/0000-0002-7779-481X" target="orcid.widget">
+<image class="orcid" src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" height="16"></a>
+<br/>
+**License:** [MIT](https://opensource.org/licenses/MIT)<br/>
+
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/powder)](https://cran.r-project.org/package=powder)
 <!-- badges: end -->
+
+## Overview
 
 The goal of `powder` is to complement __power__ and __sample size__ calculations:
 
@@ -133,11 +140,7 @@ Stephane Champely (2018). pwr: Basic Functions for Power
   Analysis. R package version 1.2-2.
   https://CRAN.R-project.org/package=pwr
 
-## Description
-
-- maintainer: Andree Valle Campos [(twitter)](https://twitter.com/avallecam)
-
-- citation:
+## Citation
 
 ```{r}
 citation("powder")
