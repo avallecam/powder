@@ -9,6 +9,7 @@ Authors@R:
            email = "avallecam@gmail.com",
            comment = c(ORCID = "0000-0002-7779-481X"))
 Description: Create tables and plot of power and sample size calculations from a range of required parameters. All of the parameters accepts a range or sequence of numbers.
+URL: https://avallecam.github.io/powder/
 License: MIT + file LICENSE
 Imports: dplyr, tidyr, broom, magrittr, pwr
 Suggests: 
