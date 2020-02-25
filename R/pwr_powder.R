@@ -156,13 +156,13 @@ pwr_tidy <- function(pwr_grid,test_function) {
 
   data %>%
     mutate(query=query_name) %>%
-    #select(everything())
     mutate(pwr_rawh=pmap(.l = select(.,one_of(list_names)),
                          .f = test_function),
-           pwr_tidy=map(.x = pwr_rawh,.f = tidy)
+           pwr_tidy=map(.x = pwr_rawh,.f = tidy),
+           pwr_tidy=map(.x = pwr_tidy,.f = ~select(.x,-one_of(intersect_names)))
     ) %>%
-    select(-one_of(intersect_names),type,alternative) %>%
-    unnest(cols = c(pwr_tidy))
+    unnest(cols = c(pwr_tidy)) %>%
+    select(-pwr_rawh)
 
 }
 
