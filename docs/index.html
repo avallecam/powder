@@ -105,15 +105,10 @@ install.packages("powder")
 <a href="#example" class="anchor"></a>Example</h2>
 <p>This is a basic example which shows you how to solve a common problem:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(tidyverse)</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="co">#&gt; Warning: package 'ggplot2' was built under R version 3.6.2</span></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(magrittr)</a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(broom)</a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(pwr)</a>
-<a class="sourceLine" id="cb2-6" title="6"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(powder)</a>
-<a class="sourceLine" id="cb2-7" title="7"><span class="co">#&gt; Warning: replacing previous import 'magrittr::set_names' by</span></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt; 'rlang::set_names' when loading 'powder'</span></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; Warning: replacing previous import 'magrittr::extract' by 'tidyr::extract'</span></a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; when loading 'powder'</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(magrittr)</a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(broom)</a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(pwr)</a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(powder)</a></code></pre></div>
 <div id="one-set-of-parameters" class="section level3">
 <h3 class="hasAnchor">
 <a href="#one-set-of-parameters" class="anchor"></a>One set of parameters</h3>
@@ -152,26 +147,24 @@ install.packages("powder")
 <a class="sourceLine" id="cb4-11" title="11"></a>
 <a class="sourceLine" id="cb4-12" title="12"><span class="co">#create tidytable</span></a>
 <a class="sourceLine" id="cb4-13" title="13">eg1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/pwr_grid.html">pwr_tidy</a></span>(<span class="dt">test_function =</span> pwr.t.test)</a>
-<a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt; Warning: Unknown columns: `n`</span></a>
-<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; # A tibble: 9 x 11</span></a>
-<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt;    diff sigma    sd delta query pwr_rawh     n sig.level power type </span></a>
-<a class="sourceLine" id="cb4-17" title="17"><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;list&gt;   &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;</span></a>
-<a class="sourceLine" id="cb4-18" title="18"><span class="co">#&gt; 1    10  10    10   1     n     &lt;pwr.ht~  9.94      0.05   0.8 one.~</span></a>
-<a class="sourceLine" id="cb4-19" title="19"><span class="co">#&gt; 2    10  12.5  12.5 0.8   n     &lt;pwr.ht~ 14.3       0.05   0.8 one.~</span></a>
-<a class="sourceLine" id="cb4-20" title="20"><span class="co">#&gt; 3    10  15    15   0.667 n     &lt;pwr.ht~ 19.7       0.05   0.8 one.~</span></a>
-<a class="sourceLine" id="cb4-21" title="21"><span class="co">#&gt; 4    20  10    10   2     n     &lt;pwr.ht~  4.22      0.05   0.8 one.~</span></a>
-<a class="sourceLine" id="cb4-22" title="22"><span class="co">#&gt; 5    20  12.5  12.5 1.6   n     &lt;pwr.ht~  5.28      0.05   0.8 one.~</span></a>
-<a class="sourceLine" id="cb4-23" title="23"><span class="co">#&gt; 6    20  15    15   1.33  n     &lt;pwr.ht~  6.58      0.05   0.8 one.~</span></a>
-<a class="sourceLine" id="cb4-24" title="24"><span class="co">#&gt; 7    30  10    10   3     n     &lt;pwr.ht~  3.14      0.05   0.8 one.~</span></a>
-<a class="sourceLine" id="cb4-25" title="25"><span class="co">#&gt; 8    30  12.5  12.5 2.4   n     &lt;pwr.ht~  3.64      0.05   0.8 one.~</span></a>
-<a class="sourceLine" id="cb4-26" title="26"><span class="co">#&gt; 9    30  15    15   2     n     &lt;pwr.ht~  4.22      0.05   0.8 one.~</span></a>
-<a class="sourceLine" id="cb4-27" title="27"><span class="co">#&gt; # ... with 1 more variable: alternative &lt;chr&gt;</span></a>
-<a class="sourceLine" id="cb4-28" title="28"></a>
-<a class="sourceLine" id="cb4-29" title="29"><span class="co">#create ggplot</span></a>
-<a class="sourceLine" id="cb4-30" title="30">eg1 <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb4-31" title="31"><span class="st">  </span><span class="kw"><a href="reference/pwr_grid.html">pwr_tidy</a></span>(<span class="dt">test_function =</span> pwr.t.test) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb4-32" title="32"><span class="st">  </span><span class="kw"><a href="reference/pwr_grid.html">pwr_plot</a></span>(<span class="dt">x =</span> diff,<span class="dt">y =</span> n,<span class="dt">group =</span> sigma)</a>
-<a class="sourceLine" id="cb4-33" title="33"><span class="co">#&gt; Warning: Unknown columns: `n`</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt; # A tibble: 9 x 11</span></a>
+<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt;    diff sigma sig.level power type  alternative    sd     d delta query</span></a>
+<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb4-17" title="17"><span class="co">#&gt; 1    10  10        0.05   0.8 one.~ two.sided    10   1     1     n    </span></a>
+<a class="sourceLine" id="cb4-18" title="18"><span class="co">#&gt; 2    10  12.5      0.05   0.8 one.~ two.sided    12.5 0.8   0.8   n    </span></a>
+<a class="sourceLine" id="cb4-19" title="19"><span class="co">#&gt; 3    10  15        0.05   0.8 one.~ two.sided    15   0.667 0.667 n    </span></a>
+<a class="sourceLine" id="cb4-20" title="20"><span class="co">#&gt; 4    20  10        0.05   0.8 one.~ two.sided    10   2     2     n    </span></a>
+<a class="sourceLine" id="cb4-21" title="21"><span class="co">#&gt; 5    20  12.5      0.05   0.8 one.~ two.sided    12.5 1.6   1.6   n    </span></a>
+<a class="sourceLine" id="cb4-22" title="22"><span class="co">#&gt; 6    20  15        0.05   0.8 one.~ two.sided    15   1.33  1.33  n    </span></a>
+<a class="sourceLine" id="cb4-23" title="23"><span class="co">#&gt; 7    30  10        0.05   0.8 one.~ two.sided    10   3     3     n    </span></a>
+<a class="sourceLine" id="cb4-24" title="24"><span class="co">#&gt; 8    30  12.5      0.05   0.8 one.~ two.sided    12.5 2.4   2.4   n    </span></a>
+<a class="sourceLine" id="cb4-25" title="25"><span class="co">#&gt; 9    30  15        0.05   0.8 one.~ two.sided    15   2     2     n    </span></a>
+<a class="sourceLine" id="cb4-26" title="26"><span class="co">#&gt; # ... with 1 more variable: n &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb4-27" title="27"></a>
+<a class="sourceLine" id="cb4-28" title="28"><span class="co">#create ggplot</span></a>
+<a class="sourceLine" id="cb4-29" title="29">eg1 <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-30" title="30"><span class="st">  </span><span class="kw"><a href="reference/pwr_grid.html">pwr_tidy</a></span>(<span class="dt">test_function =</span> pwr.t.test) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-31" title="31"><span class="st">  </span><span class="kw"><a href="reference/pwr_grid.html">pwr_plot</a></span>(<span class="dt">x =</span> diff,<span class="dt">y =</span> n,<span class="dt">group =</span> sigma)</a></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-3-1.png" width="100%"></p>
 </div>
 <div id="power" class="section level4">
@@ -190,36 +183,84 @@ install.packages("powder")
 <a class="sourceLine" id="cb5-11" title="11"></a>
 <a class="sourceLine" id="cb5-12" title="12"><span class="co">#create tidytable</span></a>
 <a class="sourceLine" id="cb5-13" title="13">eg2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/pwr_grid.html">pwr_tidy</a></span>(<span class="dt">test_function =</span> pwr.t.test)</a>
-<a class="sourceLine" id="cb5-14" title="14"><span class="co">#&gt; Warning: Unknown columns: `power`</span></a>
-<a class="sourceLine" id="cb5-15" title="15"><span class="co">#&gt; # A tibble: 18 x 11</span></a>
-<a class="sourceLine" id="cb5-16" title="16"><span class="co">#&gt;     diff sigma    sd delta query pwr_rawh     n sig.level power type </span></a>
-<a class="sourceLine" id="cb5-17" title="17"><span class="co">#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;list&gt;   &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;</span></a>
-<a class="sourceLine" id="cb5-18" title="18"><span class="co">#&gt;  1     5    10    10   0.5 power &lt;pwr.ht~    10      0.05 0.293 one.~</span></a>
-<a class="sourceLine" id="cb5-19" title="19"><span class="co">#&gt;  2    10    10    10   1   power &lt;pwr.ht~    10      0.05 0.803 one.~</span></a>
-<a class="sourceLine" id="cb5-20" title="20"><span class="co">#&gt;  3    15    10    10   1.5 power &lt;pwr.ht~    10      0.05 0.987 one.~</span></a>
-<a class="sourceLine" id="cb5-21" title="21"><span class="co">#&gt;  4     5    10    10   0.5 power &lt;pwr.ht~    12      0.05 0.353 one.~</span></a>
-<a class="sourceLine" id="cb5-22" title="22"><span class="co">#&gt;  5    10    10    10   1   power &lt;pwr.ht~    12      0.05 0.883 one.~</span></a>
-<a class="sourceLine" id="cb5-23" title="23"><span class="co">#&gt;  6    15    10    10   1.5 power &lt;pwr.ht~    12      0.05 0.997 one.~</span></a>
-<a class="sourceLine" id="cb5-24" title="24"><span class="co">#&gt;  7     5    10    10   0.5 power &lt;pwr.ht~    14      0.05 0.410 one.~</span></a>
-<a class="sourceLine" id="cb5-25" title="25"><span class="co">#&gt;  8    10    10    10   1   power &lt;pwr.ht~    14      0.05 0.932 one.~</span></a>
-<a class="sourceLine" id="cb5-26" title="26"><span class="co">#&gt;  9    15    10    10   1.5 power &lt;pwr.ht~    14      0.05 0.999 one.~</span></a>
-<a class="sourceLine" id="cb5-27" title="27"><span class="co">#&gt; 10     5    10    10   0.5 power &lt;pwr.ht~    16      0.05 0.465 one.~</span></a>
-<a class="sourceLine" id="cb5-28" title="28"><span class="co">#&gt; 11    10    10    10   1   power &lt;pwr.ht~    16      0.05 0.962 one.~</span></a>
-<a class="sourceLine" id="cb5-29" title="29"><span class="co">#&gt; 12    15    10    10   1.5 power &lt;pwr.ht~    16      0.05 1.000 one.~</span></a>
-<a class="sourceLine" id="cb5-30" title="30"><span class="co">#&gt; 13     5    10    10   0.5 power &lt;pwr.ht~    18      0.05 0.516 one.~</span></a>
-<a class="sourceLine" id="cb5-31" title="31"><span class="co">#&gt; 14    10    10    10   1   power &lt;pwr.ht~    18      0.05 0.979 one.~</span></a>
-<a class="sourceLine" id="cb5-32" title="32"><span class="co">#&gt; 15    15    10    10   1.5 power &lt;pwr.ht~    18      0.05 1.000 one.~</span></a>
-<a class="sourceLine" id="cb5-33" title="33"><span class="co">#&gt; 16     5    10    10   0.5 power &lt;pwr.ht~    20      0.05 0.565 one.~</span></a>
-<a class="sourceLine" id="cb5-34" title="34"><span class="co">#&gt; 17    10    10    10   1   power &lt;pwr.ht~    20      0.05 0.989 one.~</span></a>
-<a class="sourceLine" id="cb5-35" title="35"><span class="co">#&gt; 18    15    10    10   1.5 power &lt;pwr.ht~    20      0.05 1.000 one.~</span></a>
-<a class="sourceLine" id="cb5-36" title="36"><span class="co">#&gt; # ... with 1 more variable: alternative &lt;chr&gt;</span></a>
-<a class="sourceLine" id="cb5-37" title="37"></a>
-<a class="sourceLine" id="cb5-38" title="38"><span class="co">#create ggplot</span></a>
-<a class="sourceLine" id="cb5-39" title="39">eg2 <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-40" title="40"><span class="st">  </span><span class="kw"><a href="reference/pwr_grid.html">pwr_tidy</a></span>(<span class="dt">test_function =</span> pwr.t.test) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-41" title="41"><span class="st">  </span><span class="kw"><a href="reference/pwr_grid.html">pwr_plot</a></span>(<span class="dt">x =</span> n,<span class="dt">y =</span> power,<span class="dt">group=</span>diff)</a>
-<a class="sourceLine" id="cb5-42" title="42"><span class="co">#&gt; Warning: Unknown columns: `power`</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-14" title="14"><span class="co">#&gt; # A tibble: 18 x 11</span></a>
+<a class="sourceLine" id="cb5-15" title="15"><span class="co">#&gt;        n  diff sigma sig.level type  alternative    sd     d delta query</span></a>
+<a class="sourceLine" id="cb5-16" title="16"><span class="co">#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb5-17" title="17"><span class="co">#&gt;  1    10     5    10      0.05 one.~ two.sided      10   0.5   0.5 power</span></a>
+<a class="sourceLine" id="cb5-18" title="18"><span class="co">#&gt;  2    10    10    10      0.05 one.~ two.sided      10   1     1   power</span></a>
+<a class="sourceLine" id="cb5-19" title="19"><span class="co">#&gt;  3    10    15    10      0.05 one.~ two.sided      10   1.5   1.5 power</span></a>
+<a class="sourceLine" id="cb5-20" title="20"><span class="co">#&gt;  4    12     5    10      0.05 one.~ two.sided      10   0.5   0.5 power</span></a>
+<a class="sourceLine" id="cb5-21" title="21"><span class="co">#&gt;  5    12    10    10      0.05 one.~ two.sided      10   1     1   power</span></a>
+<a class="sourceLine" id="cb5-22" title="22"><span class="co">#&gt;  6    12    15    10      0.05 one.~ two.sided      10   1.5   1.5 power</span></a>
+<a class="sourceLine" id="cb5-23" title="23"><span class="co">#&gt;  7    14     5    10      0.05 one.~ two.sided      10   0.5   0.5 power</span></a>
+<a class="sourceLine" id="cb5-24" title="24"><span class="co">#&gt;  8    14    10    10      0.05 one.~ two.sided      10   1     1   power</span></a>
+<a class="sourceLine" id="cb5-25" title="25"><span class="co">#&gt;  9    14    15    10      0.05 one.~ two.sided      10   1.5   1.5 power</span></a>
+<a class="sourceLine" id="cb5-26" title="26"><span class="co">#&gt; 10    16     5    10      0.05 one.~ two.sided      10   0.5   0.5 power</span></a>
+<a class="sourceLine" id="cb5-27" title="27"><span class="co">#&gt; 11    16    10    10      0.05 one.~ two.sided      10   1     1   power</span></a>
+<a class="sourceLine" id="cb5-28" title="28"><span class="co">#&gt; 12    16    15    10      0.05 one.~ two.sided      10   1.5   1.5 power</span></a>
+<a class="sourceLine" id="cb5-29" title="29"><span class="co">#&gt; 13    18     5    10      0.05 one.~ two.sided      10   0.5   0.5 power</span></a>
+<a class="sourceLine" id="cb5-30" title="30"><span class="co">#&gt; 14    18    10    10      0.05 one.~ two.sided      10   1     1   power</span></a>
+<a class="sourceLine" id="cb5-31" title="31"><span class="co">#&gt; 15    18    15    10      0.05 one.~ two.sided      10   1.5   1.5 power</span></a>
+<a class="sourceLine" id="cb5-32" title="32"><span class="co">#&gt; 16    20     5    10      0.05 one.~ two.sided      10   0.5   0.5 power</span></a>
+<a class="sourceLine" id="cb5-33" title="33"><span class="co">#&gt; 17    20    10    10      0.05 one.~ two.sided      10   1     1   power</span></a>
+<a class="sourceLine" id="cb5-34" title="34"><span class="co">#&gt; 18    20    15    10      0.05 one.~ two.sided      10   1.5   1.5 power</span></a>
+<a class="sourceLine" id="cb5-35" title="35"><span class="co">#&gt; # ... with 1 more variable: power &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb5-36" title="36"></a>
+<a class="sourceLine" id="cb5-37" title="37"><span class="co">#create ggplot</span></a>
+<a class="sourceLine" id="cb5-38" title="38">eg2 <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-39" title="39"><span class="st">  </span><span class="kw"><a href="reference/pwr_grid.html">pwr_tidy</a></span>(<span class="dt">test_function =</span> pwr.t.test) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-40" title="40"><span class="st">  </span><span class="kw"><a href="reference/pwr_grid.html">pwr_plot</a></span>(<span class="dt">x =</span> n,<span class="dt">y =</span> power,<span class="dt">group=</span>diff)</a></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-4-1.png" width="100%"></p>
+</div>
+<div id="flexible-with-different-pwr-functions" class="section level4">
+<h4 class="hasAnchor">
+<a href="#flexible-with-different-pwr-functions" class="anchor"></a>flexible with different <code>pwr</code> functions</h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="co">#example("pwr.2p.test")</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="kw">pwr.2p.test</span>(<span class="dt">h=</span><span class="fl">0.3</span>,<span class="dt">n=</span><span class="dv">80</span>,<span class="dt">sig.level=</span><span class="fl">0.05</span>,<span class="dt">alternative=</span><span class="st">"greater"</span>)</a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="co">#&gt;      Difference of proportion power calculation for binomial distribution (arcsine transformation) </span></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="co">#&gt;               h = 0.3</span></a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="co">#&gt;               n = 80</span></a>
+<a class="sourceLine" id="cb6-8" title="8"><span class="co">#&gt;       sig.level = 0.05</span></a>
+<a class="sourceLine" id="cb6-9" title="9"><span class="co">#&gt;           power = 0.5996777</span></a>
+<a class="sourceLine" id="cb6-10" title="10"><span class="co">#&gt;     alternative = greater</span></a>
+<a class="sourceLine" id="cb6-11" title="11"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb6-12" title="12"><span class="co">#&gt; </span><span class="al">NOTE</span><span class="co">: same sample sizes</span></a>
+<a class="sourceLine" id="cb6-13" title="13"></a>
+<a class="sourceLine" id="cb6-14" title="14"><span class="kw"><a href="reference/pwr_grid.html">pwr_grid</a></span>(<span class="dt">h=</span><span class="fl">0.3</span>,<span class="dt">n=</span><span class="dv">80</span><span class="op">:</span><span class="dv">90</span>,<span class="dt">sig.level=</span><span class="fl">0.05</span>,<span class="dt">alternative=</span><span class="st">"greater"</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb6-15" title="15"><span class="st">  </span><span class="kw"><a href="reference/pwr_grid.html">pwr_tidy</a></span>(<span class="dt">test_function =</span> pwr<span class="fl">.2</span>p.test)</a>
+<a class="sourceLine" id="cb6-16" title="16"><span class="co">#&gt; # A tibble: 11 x 6</span></a>
+<a class="sourceLine" id="cb6-17" title="17"><span class="co">#&gt;        n     h sig.level alternative query power</span></a>
+<a class="sourceLine" id="cb6-18" title="18"><span class="co">#&gt;    &lt;int&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb6-19" title="19"><span class="co">#&gt;  1    80   0.3      0.05 greater     power 0.600</span></a>
+<a class="sourceLine" id="cb6-20" title="20"><span class="co">#&gt;  2    81   0.3      0.05 greater     power 0.604</span></a>
+<a class="sourceLine" id="cb6-21" title="21"><span class="co">#&gt;  3    82   0.3      0.05 greater     power 0.609</span></a>
+<a class="sourceLine" id="cb6-22" title="22"><span class="co">#&gt;  4    83   0.3      0.05 greater     power 0.613</span></a>
+<a class="sourceLine" id="cb6-23" title="23"><span class="co">#&gt;  5    84   0.3      0.05 greater     power 0.618</span></a>
+<a class="sourceLine" id="cb6-24" title="24"><span class="co">#&gt;  6    85   0.3      0.05 greater     power 0.622</span></a>
+<a class="sourceLine" id="cb6-25" title="25"><span class="co">#&gt;  7    86   0.3      0.05 greater     power 0.626</span></a>
+<a class="sourceLine" id="cb6-26" title="26"><span class="co">#&gt;  8    87   0.3      0.05 greater     power 0.631</span></a>
+<a class="sourceLine" id="cb6-27" title="27"><span class="co">#&gt;  9    88   0.3      0.05 greater     power 0.635</span></a>
+<a class="sourceLine" id="cb6-28" title="28"><span class="co">#&gt; 10    89   0.3      0.05 greater     power 0.639</span></a>
+<a class="sourceLine" id="cb6-29" title="29"><span class="co">#&gt; 11    90   0.3      0.05 greater     power 0.643</span></a>
+<a class="sourceLine" id="cb6-30" title="30"></a>
+<a class="sourceLine" id="cb6-31" title="31"><span class="kw"><a href="reference/pwr_grid.html">pwr_grid</a></span>(<span class="dt">h=</span><span class="kw"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">0.3</span>,<span class="fl">0.9</span>,<span class="fl">0.1</span>),<span class="dt">n=</span><span class="dv">80</span><span class="op">:</span><span class="dv">90</span>,<span class="dt">sig.level=</span><span class="fl">0.05</span>,<span class="dt">alternative=</span><span class="st">"greater"</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb6-32" title="32"><span class="st">  </span><span class="kw"><a href="reference/pwr_grid.html">pwr_tidy</a></span>(<span class="dt">test_function =</span> pwr<span class="fl">.2</span>p.test)</a>
+<a class="sourceLine" id="cb6-33" title="33"><span class="co">#&gt; # A tibble: 77 x 6</span></a>
+<a class="sourceLine" id="cb6-34" title="34"><span class="co">#&gt;        n     h sig.level alternative query power</span></a>
+<a class="sourceLine" id="cb6-35" title="35"><span class="co">#&gt;    &lt;int&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb6-36" title="36"><span class="co">#&gt;  1    80   0.3      0.05 greater     power 0.600</span></a>
+<a class="sourceLine" id="cb6-37" title="37"><span class="co">#&gt;  2    80   0.4      0.05 greater     power 0.812</span></a>
+<a class="sourceLine" id="cb6-38" title="38"><span class="co">#&gt;  3    80   0.5      0.05 greater     power 0.935</span></a>
+<a class="sourceLine" id="cb6-39" title="39"><span class="co">#&gt;  4    80   0.6      0.05 greater     power 0.984</span></a>
+<a class="sourceLine" id="cb6-40" title="40"><span class="co">#&gt;  5    80   0.7      0.05 greater     power 0.997</span></a>
+<a class="sourceLine" id="cb6-41" title="41"><span class="co">#&gt;  6    80   0.8      0.05 greater     power 1.000</span></a>
+<a class="sourceLine" id="cb6-42" title="42"><span class="co">#&gt;  7    80   0.9      0.05 greater     power 1.000</span></a>
+<a class="sourceLine" id="cb6-43" title="43"><span class="co">#&gt;  8    81   0.3      0.05 greater     power 0.604</span></a>
+<a class="sourceLine" id="cb6-44" title="44"><span class="co">#&gt;  9    81   0.4      0.05 greater     power 0.816</span></a>
+<a class="sourceLine" id="cb6-45" title="45"><span class="co">#&gt; 10    81   0.5      0.05 greater     power 0.938</span></a>
+<a class="sourceLine" id="cb6-46" title="46"><span class="co">#&gt; # ... with 67 more rows</span></a></code></pre></div>
 </div>
 </div>
 </div>
@@ -231,23 +272,23 @@ install.packages("powder")
 <div id="citation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#citation" class="anchor"></a>Citation</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">"powder"</span>)</a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="co">#&gt; To cite package 'powder' in publications use:</span></a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb6-5" title="5"><span class="co">#&gt;   Andree Valle-Campos (2020). powder: A Tidy Extension for Power</span></a>
-<a class="sourceLine" id="cb6-6" title="6"><span class="co">#&gt;   Analysis. R package version 0.0.0.9000.</span></a>
-<a class="sourceLine" id="cb6-7" title="7"><span class="co">#&gt;   https://avallecam.github.io/powder/</span></a>
-<a class="sourceLine" id="cb6-8" title="8"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb6-9" title="9"><span class="co">#&gt; A BibTeX entry for LaTeX users is</span></a>
-<a class="sourceLine" id="cb6-10" title="10"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb6-11" title="11"><span class="co">#&gt;   @Manual{,</span></a>
-<a class="sourceLine" id="cb6-12" title="12"><span class="co">#&gt;     title = {powder: A Tidy Extension for Power Analysis},</span></a>
-<a class="sourceLine" id="cb6-13" title="13"><span class="co">#&gt;     author = {Andree Valle-Campos},</span></a>
-<a class="sourceLine" id="cb6-14" title="14"><span class="co">#&gt;     year = {2020},</span></a>
-<a class="sourceLine" id="cb6-15" title="15"><span class="co">#&gt;     note = {R package version 0.0.0.9000},</span></a>
-<a class="sourceLine" id="cb6-16" title="16"><span class="co">#&gt;     url = {https://avallecam.github.io/powder/},</span></a>
-<a class="sourceLine" id="cb6-17" title="17"><span class="co">#&gt;   }</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">"powder"</span>)</a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="co">#&gt; To cite package 'powder' in publications use:</span></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="co">#&gt;   Andree Valle-Campos (2020). powder: A Tidy Extension for Power</span></a>
+<a class="sourceLine" id="cb7-6" title="6"><span class="co">#&gt;   Analysis. R package version 0.0.0.9000.</span></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="co">#&gt;   https://avallecam.github.io/powder/</span></a>
+<a class="sourceLine" id="cb7-8" title="8"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb7-9" title="9"><span class="co">#&gt; A BibTeX entry for LaTeX users is</span></a>
+<a class="sourceLine" id="cb7-10" title="10"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb7-11" title="11"><span class="co">#&gt;   @Manual{,</span></a>
+<a class="sourceLine" id="cb7-12" title="12"><span class="co">#&gt;     title = {powder: A Tidy Extension for Power Analysis},</span></a>
+<a class="sourceLine" id="cb7-13" title="13"><span class="co">#&gt;     author = {Andree Valle-Campos},</span></a>
+<a class="sourceLine" id="cb7-14" title="14"><span class="co">#&gt;     year = {2020},</span></a>
+<a class="sourceLine" id="cb7-15" title="15"><span class="co">#&gt;     note = {R package version 0.0.0.9000},</span></a>
+<a class="sourceLine" id="cb7-16" title="16"><span class="co">#&gt;     url = {https://avallecam.github.io/powder/},</span></a>
+<a class="sourceLine" id="cb7-17" title="17"><span class="co">#&gt;   }</span></a></code></pre></div>
 </div>
 </div>
   </div>

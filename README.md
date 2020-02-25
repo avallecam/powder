@@ -63,15 +63,10 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(tidyverse)
-#> Warning: package 'ggplot2' was built under R version 3.6.2
 library(magrittr)
 library(broom)
 library(pwr)
 library(powder)
-#> Warning: replacing previous import 'magrittr::set_names' by
-#> 'rlang::set_names' when loading 'powder'
-#> Warning: replacing previous import 'magrittr::extract' by 'tidyr::extract'
-#> when loading 'powder'
 ```
 
 ### One set of parameters
@@ -112,26 +107,24 @@ eg1 <- pwr_grid(n = NULL,
 
 #create tidytable
 eg1 %>% pwr_tidy(test_function = pwr.t.test)
-#> Warning: Unknown columns: `n`
 #> # A tibble: 9 x 11
-#>    diff sigma    sd delta query pwr_rawh     n sig.level power type 
-#>   <dbl> <dbl> <dbl> <dbl> <chr> <list>   <dbl>     <dbl> <dbl> <chr>
-#> 1    10  10    10   1     n     <pwr.ht~  9.94      0.05   0.8 one.~
-#> 2    10  12.5  12.5 0.8   n     <pwr.ht~ 14.3       0.05   0.8 one.~
-#> 3    10  15    15   0.667 n     <pwr.ht~ 19.7       0.05   0.8 one.~
-#> 4    20  10    10   2     n     <pwr.ht~  4.22      0.05   0.8 one.~
-#> 5    20  12.5  12.5 1.6   n     <pwr.ht~  5.28      0.05   0.8 one.~
-#> 6    20  15    15   1.33  n     <pwr.ht~  6.58      0.05   0.8 one.~
-#> 7    30  10    10   3     n     <pwr.ht~  3.14      0.05   0.8 one.~
-#> 8    30  12.5  12.5 2.4   n     <pwr.ht~  3.64      0.05   0.8 one.~
-#> 9    30  15    15   2     n     <pwr.ht~  4.22      0.05   0.8 one.~
-#> # ... with 1 more variable: alternative <chr>
+#>    diff sigma sig.level power type  alternative    sd     d delta query
+#>   <dbl> <dbl>     <dbl> <dbl> <chr> <chr>       <dbl> <dbl> <dbl> <chr>
+#> 1    10  10        0.05   0.8 one.~ two.sided    10   1     1     n    
+#> 2    10  12.5      0.05   0.8 one.~ two.sided    12.5 0.8   0.8   n    
+#> 3    10  15        0.05   0.8 one.~ two.sided    15   0.667 0.667 n    
+#> 4    20  10        0.05   0.8 one.~ two.sided    10   2     2     n    
+#> 5    20  12.5      0.05   0.8 one.~ two.sided    12.5 1.6   1.6   n    
+#> 6    20  15        0.05   0.8 one.~ two.sided    15   1.33  1.33  n    
+#> 7    30  10        0.05   0.8 one.~ two.sided    10   3     3     n    
+#> 8    30  12.5      0.05   0.8 one.~ two.sided    12.5 2.4   2.4   n    
+#> 9    30  15        0.05   0.8 one.~ two.sided    15   2     2     n    
+#> # ... with 1 more variable: n <dbl>
 
 #create ggplot
 eg1 %>%
   pwr_tidy(test_function = pwr.t.test) %>%
   pwr_plot(x = diff,y = n,group = sigma)
-#> Warning: Unknown columns: `n`
 ```
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
@@ -152,38 +145,87 @@ eg2 <- pwr_grid(n = seq(from = 10,to = 20,by = 2),
 
 #create tidytable
 eg2 %>% pwr_tidy(test_function = pwr.t.test)
-#> Warning: Unknown columns: `power`
 #> # A tibble: 18 x 11
-#>     diff sigma    sd delta query pwr_rawh     n sig.level power type 
-#>    <dbl> <dbl> <dbl> <dbl> <chr> <list>   <dbl>     <dbl> <dbl> <chr>
-#>  1     5    10    10   0.5 power <pwr.ht~    10      0.05 0.293 one.~
-#>  2    10    10    10   1   power <pwr.ht~    10      0.05 0.803 one.~
-#>  3    15    10    10   1.5 power <pwr.ht~    10      0.05 0.987 one.~
-#>  4     5    10    10   0.5 power <pwr.ht~    12      0.05 0.353 one.~
-#>  5    10    10    10   1   power <pwr.ht~    12      0.05 0.883 one.~
-#>  6    15    10    10   1.5 power <pwr.ht~    12      0.05 0.997 one.~
-#>  7     5    10    10   0.5 power <pwr.ht~    14      0.05 0.410 one.~
-#>  8    10    10    10   1   power <pwr.ht~    14      0.05 0.932 one.~
-#>  9    15    10    10   1.5 power <pwr.ht~    14      0.05 0.999 one.~
-#> 10     5    10    10   0.5 power <pwr.ht~    16      0.05 0.465 one.~
-#> 11    10    10    10   1   power <pwr.ht~    16      0.05 0.962 one.~
-#> 12    15    10    10   1.5 power <pwr.ht~    16      0.05 1.000 one.~
-#> 13     5    10    10   0.5 power <pwr.ht~    18      0.05 0.516 one.~
-#> 14    10    10    10   1   power <pwr.ht~    18      0.05 0.979 one.~
-#> 15    15    10    10   1.5 power <pwr.ht~    18      0.05 1.000 one.~
-#> 16     5    10    10   0.5 power <pwr.ht~    20      0.05 0.565 one.~
-#> 17    10    10    10   1   power <pwr.ht~    20      0.05 0.989 one.~
-#> 18    15    10    10   1.5 power <pwr.ht~    20      0.05 1.000 one.~
-#> # ... with 1 more variable: alternative <chr>
+#>        n  diff sigma sig.level type  alternative    sd     d delta query
+#>    <dbl> <dbl> <dbl>     <dbl> <chr> <chr>       <dbl> <dbl> <dbl> <chr>
+#>  1    10     5    10      0.05 one.~ two.sided      10   0.5   0.5 power
+#>  2    10    10    10      0.05 one.~ two.sided      10   1     1   power
+#>  3    10    15    10      0.05 one.~ two.sided      10   1.5   1.5 power
+#>  4    12     5    10      0.05 one.~ two.sided      10   0.5   0.5 power
+#>  5    12    10    10      0.05 one.~ two.sided      10   1     1   power
+#>  6    12    15    10      0.05 one.~ two.sided      10   1.5   1.5 power
+#>  7    14     5    10      0.05 one.~ two.sided      10   0.5   0.5 power
+#>  8    14    10    10      0.05 one.~ two.sided      10   1     1   power
+#>  9    14    15    10      0.05 one.~ two.sided      10   1.5   1.5 power
+#> 10    16     5    10      0.05 one.~ two.sided      10   0.5   0.5 power
+#> 11    16    10    10      0.05 one.~ two.sided      10   1     1   power
+#> 12    16    15    10      0.05 one.~ two.sided      10   1.5   1.5 power
+#> 13    18     5    10      0.05 one.~ two.sided      10   0.5   0.5 power
+#> 14    18    10    10      0.05 one.~ two.sided      10   1     1   power
+#> 15    18    15    10      0.05 one.~ two.sided      10   1.5   1.5 power
+#> 16    20     5    10      0.05 one.~ two.sided      10   0.5   0.5 power
+#> 17    20    10    10      0.05 one.~ two.sided      10   1     1   power
+#> 18    20    15    10      0.05 one.~ two.sided      10   1.5   1.5 power
+#> # ... with 1 more variable: power <dbl>
 
 #create ggplot
 eg2 %>%
   pwr_tidy(test_function = pwr.t.test) %>%
   pwr_plot(x = n,y = power,group=diff)
-#> Warning: Unknown columns: `power`
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+
+#### flexible with different `pwr` functions
+
+``` r
+#example("pwr.2p.test")
+pwr.2p.test(h=0.3,n=80,sig.level=0.05,alternative="greater")
+#> 
+#>      Difference of proportion power calculation for binomial distribution (arcsine transformation) 
+#> 
+#>               h = 0.3
+#>               n = 80
+#>       sig.level = 0.05
+#>           power = 0.5996777
+#>     alternative = greater
+#> 
+#> NOTE: same sample sizes
+
+pwr_grid(h=0.3,n=80:90,sig.level=0.05,alternative="greater") %>% 
+  pwr_tidy(test_function = pwr.2p.test)
+#> # A tibble: 11 x 6
+#>        n     h sig.level alternative query power
+#>    <int> <dbl>     <dbl> <chr>       <chr> <dbl>
+#>  1    80   0.3      0.05 greater     power 0.600
+#>  2    81   0.3      0.05 greater     power 0.604
+#>  3    82   0.3      0.05 greater     power 0.609
+#>  4    83   0.3      0.05 greater     power 0.613
+#>  5    84   0.3      0.05 greater     power 0.618
+#>  6    85   0.3      0.05 greater     power 0.622
+#>  7    86   0.3      0.05 greater     power 0.626
+#>  8    87   0.3      0.05 greater     power 0.631
+#>  9    88   0.3      0.05 greater     power 0.635
+#> 10    89   0.3      0.05 greater     power 0.639
+#> 11    90   0.3      0.05 greater     power 0.643
+
+pwr_grid(h=seq(0.3,0.9,0.1),n=80:90,sig.level=0.05,alternative="greater") %>% 
+  pwr_tidy(test_function = pwr.2p.test)
+#> # A tibble: 77 x 6
+#>        n     h sig.level alternative query power
+#>    <int> <dbl>     <dbl> <chr>       <chr> <dbl>
+#>  1    80   0.3      0.05 greater     power 0.600
+#>  2    80   0.4      0.05 greater     power 0.812
+#>  3    80   0.5      0.05 greater     power 0.935
+#>  4    80   0.6      0.05 greater     power 0.984
+#>  5    80   0.7      0.05 greater     power 0.997
+#>  6    80   0.8      0.05 greater     power 1.000
+#>  7    80   0.9      0.05 greater     power 1.000
+#>  8    81   0.3      0.05 greater     power 0.604
+#>  9    81   0.4      0.05 greater     power 0.816
+#> 10    81   0.5      0.05 greater     power 0.938
+#> # ... with 67 more rows
+```
 
 ## References
 

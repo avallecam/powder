@@ -7,6 +7,7 @@ output: github_document
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  warning = FALSE,
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%"
@@ -132,6 +133,19 @@ eg2 %>% pwr_tidy(test_function = pwr.t.test)
 eg2 %>%
   pwr_tidy(test_function = pwr.t.test) %>%
   pwr_plot(x = n,y = power,group=diff)
+```
+
+#### flexible with different `pwr` functions
+
+```{r}
+#example("pwr.2p.test")
+pwr.2p.test(h=0.3,n=80,sig.level=0.05,alternative="greater")
+
+pwr_grid(h=0.3,n=80:90,sig.level=0.05,alternative="greater") %>% 
+  pwr_tidy(test_function = pwr.2p.test)
+
+pwr_grid(h=seq(0.3,0.9,0.1),n=80:90,sig.level=0.05,alternative="greater") %>% 
+  pwr_tidy(test_function = pwr.2p.test)
 ```
 
 ## References
