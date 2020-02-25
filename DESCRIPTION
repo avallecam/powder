@@ -1,5 +1,5 @@
 Package: powder
-Title: Complemetary Tidy Functions for Power Analysis using pwr and stats::power
+Title: A Tidy Extension for Power Analysis
 Version: 0.0.0.9000
 Date: 2020-02-18
 Authors@R: 
@@ -11,7 +11,7 @@ Authors@R:
 Description: Create tables and plot of power and sample size calculations from a range of required parameters. All of the parameters accepts a range or sequence of numbers.
 URL: https://avallecam.github.io/powder/
 License: MIT + file LICENSE
-Imports: dplyr, tidyr, broom, magrittr, pwr
+Imports: tidyverse, dplyr, tidyr, broom, magrittr, pwr, rlang
 Suggests: 
     testthat
 Encoding: UTF-8

@@ -74,19 +74,19 @@ library(pwr)
 library(powder)
 ```
 
-### with one set of parameters
+### One set of parameters
 
 ```{r}
 diff <- 10
 sigma <- 10
 delta <- diff/sigma
 
-pwr.t.test(d = delta, power = 0.8, type = "one.sample") %>% tidy()
-# power.t.test(d = delta, power = 0.8, type = "one.sample") %>% tidy()
-# pwr.t.test(d = delta, power = 0.8, type = "one.sample") %>% plot()
+pwr.t.test(d = delta, power = 0.8, type = "one.sample")
+# sample - power plot
+#pwr.t.test(d = delta, power = 0.8, type = "one.sample") %>% plot()
 ```
 
-### with more than one set of parameters
+### More than one set of parameters
 
 #### sample size
 

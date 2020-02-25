@@ -1,6 +1,6 @@
-#' @title powder: Complemetary Tidy Functions for Power Analysis using pwr and stats::power
+#' @title powder: A Tidy Extension for Power Analysis
 #'
-#' @description Create tables and plots for power and sample size calculations from a range of required parameters. All of the parameters accepts a range or sequence of numbers.
+#' @description Create tables and plots for power and sample size calculations from a range of required parameters. All of the parameters accepts a range or sequence of numbers. Usable with pwr and stats::power.
 #'
 #' @describeIn pwr_grid
 #'
@@ -18,6 +18,7 @@
 #' @import broom
 #' @import magrittr
 #' @import pwr
+#' @import rlang
 #'
 #' @return canal endemico, union y grafico
 #'
@@ -82,22 +83,46 @@
 #'   pwr_tidy(test_function = power.t.test) %>%
 #'   pwr_plot(x = n,y = delta,group=sd)
 #'
-pwr_grid <- function(n=NULL,
+pwr_grid <- function(k=NULL,
+                     n=NULL,
+                     n1=NULL,n2=NULL,
+                     N=NULL,
+                     h=NULL,
+                     f=NULL,
+                     f2=NULL,
+                     r=NULL,
+                     w=NULL,
                      diff=NULL,sigma=NULL,d=NULL,
-                     sig.level=NULL,
+                     df=NULL,
+                     u=NULL,
+                     v=NULL,
+                     sig.level=0.05,
                      power=NULL,
                      type=NULL,
                      alternative=NULL) {
+
   dbx <- expand_grid(
+    k=k,
     n=n,
+    n1=n1,n2=n2,
+    N=N,
+    h=h,
+    f=f,
+    f2=f2,
+    r=r,
+    w=w,
     diff=diff,
+    df=df,
+    u=u,
+    v=v,
     sigma=sigma,
     d=d,
     sig.level=sig.level,
     power=power,
     type=type,
     alternative=alternative
-  )
+  ) %>%
+    mutate(sd=sigma)
 
   if (!is_in("d",colnames(dbx)) & !is_in("diff",colnames(dbx))) {
     dbx <- dbx
@@ -105,10 +130,9 @@ pwr_grid <- function(n=NULL,
 
   if (!is_in("d",colnames(dbx)) & is_in("diff",colnames(dbx))) {
     dbx <- dbx %>%
-      mutate(d=diff/sigma)
+      mutate(d=diff/sigma,
+             delta=d)
   }
-
-
 
   dbx
 
@@ -121,59 +145,24 @@ pwr_grid <- function(n=NULL,
 
 pwr_tidy <- function(pwr_grid,test_function) {
 
-  dbx <- pwr_grid
-  #dbx <- eg1
+  data <- pwr_grid
 
-  if (!is_in("n",colnames(dbx))) {
-    dbx <- dbx %>%
+  list_names <- rlang::fn_fmls(fn = test_function) %>% pluck(names)
+  target_names <- colnames(data)
 
-      mutate(pwr_rawh=pmap(.l = select(.,#n,
-                                       d,sig.level,power,type,alternative),
-                           .f = test_function),
-             pwr_tidy=map(.x = pwr_rawh,.f = tidy)
-      ) %>%
-      select(-power,-sig.level) %>%
-      unnest(cols = c(pwr_tidy))
-  }
+  query_name <- setdiff(list_names,target_names)[1] # this tells what I want
+  #setdiff(target_names,list_names) # this tells
+  intersect_names <- intersect(list_names,target_names)
 
-  if (!is_in("power",colnames(dbx))) {
-
-    dbx <- dbx %>%
-
-      mutate(pwr_rawh=pmap(.l = select(.,n,
-                                       d,sig.level,
-                                       #power,
-                                       type,alternative),
-                           .f = test_function),
-             pwr_tidy=map(.x = pwr_rawh,.f = tidy)
-      ) %>%
-      select(#-power,
-        -n,-sig.level) %>%
-      unnest(cols = c(pwr_tidy))
-
-  }
-
-  if (!is_in("d",colnames(dbx))) {
-
-    dbx <- dbx %>%
-      #eg3 %>%
-      rename(sd=sigma) %>%
-
-      mutate(pwr_rawh=pmap(.l = select(.,n,sd,
-                                       #d,
-                                       sig.level,
-                                       power,
-                                       type,alternative),
-                           .f = test_function),
-             pwr_tidy=map(.x = pwr_rawh,.f = tidy)
-      ) %>%
-      select(-power,-sd,
-             -n,-sig.level) %>%
-      unnest(cols = c(pwr_tidy))
-
-  }
-
-  dbx
+  data %>%
+    mutate(query=query_name) %>%
+    #select(everything())
+    mutate(pwr_rawh=pmap(.l = select(.,one_of(list_names)),
+                         .f = test_function),
+           pwr_tidy=map(.x = pwr_rawh,.f = tidy)
+    ) %>%
+    select(-one_of(intersect_names),type,alternative) %>%
+    unnest(cols = c(pwr_tidy))
 
 }
 

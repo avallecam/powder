@@ -4,10 +4,13 @@
 \alias{pwr_grid}
 \alias{pwr_tidy}
 \alias{pwr_plot}
-\title{powder: Complemetary Tidy Functions for Power Analysis using pwr and stats::power}
+\title{powder: A Tidy Extension for Power Analysis}
 \usage{
-pwr_grid(n = NULL, diff = NULL, sigma = NULL, d = NULL,
-  sig.level = NULL, power = NULL, type = NULL, alternative = NULL)
+pwr_grid(k = NULL, n = NULL, n1 = NULL, n2 = NULL, N = NULL,
+  h = NULL, f = NULL, f2 = NULL, r = NULL, w = NULL,
+  diff = NULL, sigma = NULL, d = NULL, df = NULL, u = NULL,
+  v = NULL, sig.level = 0.05, power = NULL, type = NULL,
+  alternative = NULL)
 
 pwr_tidy(pwr_grid, test_function)
 
@@ -46,7 +49,7 @@ pwr_plot(pwr_tidy, x, y, group)
 canal endemico, union y grafico
 }
 \description{
-Create tables and plots for power and sample size calculations from a range of required parameters. All of the parameters accepts a range or sequence of numbers.
+Create tables and plots for power and sample size calculations from a range of required parameters. All of the parameters accepts a range or sequence of numbers. Usable with pwr and stats::power.
 }
 \section{Functions}{
 \itemize{
