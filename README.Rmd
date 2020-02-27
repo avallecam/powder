@@ -1,7 +1,7 @@
 ---
 output: 
   github_document:
-    df_print: kable
+    #df_print: kable
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
