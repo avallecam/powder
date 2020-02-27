@@ -81,7 +81,7 @@
 #'
 #' eg3 %>%
 #'   pwr_tidy(test_function = power.t.test) %>%
-#'   pwr_plot(x = n,y = delta,group=sd)
+#'   pwr_plot(x = n,y = delta,group=sigma)
 #'
 pwr_grid <- function(k=NULL,
                      n=NULL,
@@ -154,7 +154,7 @@ pwr_tidy <- function(pwr_grid,test_function) {
   #setdiff(target_names,list_names) # this tells
   intersect_names <- intersect(list_names,target_names)
 
-  data %>%
+  dbx <- data %>%
     mutate(query=query_name) %>%
     mutate(pwr_rawh=pmap(.l = select(.,one_of(list_names)),
                          .f = test_function),
@@ -163,6 +163,18 @@ pwr_tidy <- function(pwr_grid,test_function) {
     ) %>%
     unnest(cols = c(pwr_tidy)) %>%
     select(-pwr_rawh)
+
+  if (is_in("d",colnames(dbx)) & is_in("delta",colnames(dbx))) {
+    dbx <- dbx %>%
+      select(-d)
+  }
+
+  if (is_in("sd",colnames(dbx)) & is_in("sigma",colnames(dbx))) {
+    dbx <- dbx %>%
+      select(-sd)
+  }
+
+  dbx
 
 }
 

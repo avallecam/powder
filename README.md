@@ -64,6 +64,7 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(tidyverse)
 library(magrittr)
+library(knitr)
 library(broom)
 library(pwr)
 library(powder)
@@ -107,19 +108,25 @@ eg1 <- pwr_grid(n = NULL,
 
 #create tidytable
 eg1 %>% pwr_tidy(test_function = pwr.t.test)
-#> # A tibble: 9 x 11
-#>    diff sigma sig.level power type  alternative    sd     d delta query
-#>   <dbl> <dbl>     <dbl> <dbl> <chr> <chr>       <dbl> <dbl> <dbl> <chr>
-#> 1    10  10        0.05   0.8 one.~ two.sided    10   1     1     n    
-#> 2    10  12.5      0.05   0.8 one.~ two.sided    12.5 0.8   0.8   n    
-#> 3    10  15        0.05   0.8 one.~ two.sided    15   0.667 0.667 n    
-#> 4    20  10        0.05   0.8 one.~ two.sided    10   2     2     n    
-#> 5    20  12.5      0.05   0.8 one.~ two.sided    12.5 1.6   1.6   n    
-#> 6    20  15        0.05   0.8 one.~ two.sided    15   1.33  1.33  n    
-#> 7    30  10        0.05   0.8 one.~ two.sided    10   3     3     n    
-#> 8    30  12.5      0.05   0.8 one.~ two.sided    12.5 2.4   2.4   n    
-#> 9    30  15        0.05   0.8 one.~ two.sided    15   2     2     n    
-#> # ... with 1 more variable: n <dbl>
+```
+
+<div class="kable-table">
+
+| diff | sigma | sig.level | power | type       | alternative |     delta | query |         n |
+| ---: | ----: | --------: | ----: | :--------- | :---------- | --------: | :---- | --------: |
+|   10 |  10.0 |      0.05 |   0.8 | one.sample | two.sided   | 1.0000000 | n     |  9.937850 |
+|   10 |  12.5 |      0.05 |   0.8 | one.sample | two.sided   | 0.8000000 | n     | 14.302765 |
+|   10 |  15.0 |      0.05 |   0.8 | one.sample | two.sided   | 0.6666667 | n     | 19.666949 |
+|   20 |  10.0 |      0.05 |   0.8 | one.sample | two.sided   | 2.0000000 | n     |  4.220726 |
+|   20 |  12.5 |      0.05 |   0.8 | one.sample | two.sided   | 1.6000000 | n     |  5.279930 |
+|   20 |  15.0 |      0.05 |   0.8 | one.sample | two.sided   | 1.3333333 | n     |  6.581163 |
+|   30 |  10.0 |      0.05 |   0.8 | one.sample | two.sided   | 3.0000000 | n     |  3.144009 |
+|   30 |  12.5 |      0.05 |   0.8 | one.sample | two.sided   | 2.4000000 | n     |  3.638924 |
+|   30 |  15.0 |      0.05 |   0.8 | one.sample | two.sided   | 2.0000000 | n     |  4.220726 |
+
+</div>
+
+``` r
 
 #create ggplot
 eg1 %>%
@@ -145,28 +152,34 @@ eg2 <- pwr_grid(n = seq(from = 10,to = 20,by = 2),
 
 #create tidytable
 eg2 %>% pwr_tidy(test_function = pwr.t.test)
-#> # A tibble: 18 x 11
-#>        n  diff sigma sig.level type  alternative    sd     d delta query
-#>    <dbl> <dbl> <dbl>     <dbl> <chr> <chr>       <dbl> <dbl> <dbl> <chr>
-#>  1    10     5    10      0.05 one.~ two.sided      10   0.5   0.5 power
-#>  2    10    10    10      0.05 one.~ two.sided      10   1     1   power
-#>  3    10    15    10      0.05 one.~ two.sided      10   1.5   1.5 power
-#>  4    12     5    10      0.05 one.~ two.sided      10   0.5   0.5 power
-#>  5    12    10    10      0.05 one.~ two.sided      10   1     1   power
-#>  6    12    15    10      0.05 one.~ two.sided      10   1.5   1.5 power
-#>  7    14     5    10      0.05 one.~ two.sided      10   0.5   0.5 power
-#>  8    14    10    10      0.05 one.~ two.sided      10   1     1   power
-#>  9    14    15    10      0.05 one.~ two.sided      10   1.5   1.5 power
-#> 10    16     5    10      0.05 one.~ two.sided      10   0.5   0.5 power
-#> 11    16    10    10      0.05 one.~ two.sided      10   1     1   power
-#> 12    16    15    10      0.05 one.~ two.sided      10   1.5   1.5 power
-#> 13    18     5    10      0.05 one.~ two.sided      10   0.5   0.5 power
-#> 14    18    10    10      0.05 one.~ two.sided      10   1     1   power
-#> 15    18    15    10      0.05 one.~ two.sided      10   1.5   1.5 power
-#> 16    20     5    10      0.05 one.~ two.sided      10   0.5   0.5 power
-#> 17    20    10    10      0.05 one.~ two.sided      10   1     1   power
-#> 18    20    15    10      0.05 one.~ two.sided      10   1.5   1.5 power
-#> # ... with 1 more variable: power <dbl>
+```
+
+<div class="kable-table">
+
+|  n | diff | sigma | sig.level | type       | alternative | delta | query |     power |
+| -: | ---: | ----: | --------: | :--------- | :---------- | ----: | :---- | --------: |
+| 10 |    5 |    10 |      0.05 | one.sample | two.sided   |   0.5 | power | 0.2931756 |
+| 10 |   10 |    10 |      0.05 | one.sample | two.sided   |   1.0 | power | 0.8030969 |
+| 10 |   15 |    10 |      0.05 | one.sample | two.sided   |   1.5 | power | 0.9872769 |
+| 12 |    5 |    10 |      0.05 | one.sample | two.sided   |   0.5 | power | 0.3528241 |
+| 12 |   10 |    10 |      0.05 | one.sample | two.sided   |   1.0 | power | 0.8828916 |
+| 12 |   15 |    10 |      0.05 | one.sample | two.sided   |   1.5 | power | 0.9969653 |
+| 14 |    5 |    10 |      0.05 | one.sample | two.sided   |   0.5 | power | 0.4102363 |
+| 14 |   10 |    10 |      0.05 | one.sample | two.sided   |   1.0 | power | 0.9323695 |
+| 14 |   15 |    10 |      0.05 | one.sample | two.sided   |   1.5 | power | 0.9993203 |
+| 16 |    5 |    10 |      0.05 | one.sample | two.sided   |   0.5 | power | 0.4648700 |
+| 16 |   10 |    10 |      0.05 | one.sample | two.sided   |   1.0 | power | 0.9618851 |
+| 16 |   15 |    10 |      0.05 | one.sample | two.sided   |   1.5 | power | 0.9998552 |
+| 18 |    5 |    10 |      0.05 | one.sample | two.sided   |   0.5 | power | 0.5163650 |
+| 18 |   10 |    10 |      0.05 | one.sample | two.sided   |   1.0 | power | 0.9789598 |
+| 18 |   15 |    10 |      0.05 | one.sample | two.sided   |   1.5 | power | 0.9999704 |
+| 20 |    5 |    10 |      0.05 | one.sample | two.sided   |   0.5 | power | 0.5645044 |
+| 20 |   10 |    10 |      0.05 | one.sample | two.sided   |   1.0 | power | 0.9885913 |
+| 20 |   15 |    10 |      0.05 | one.sample | two.sided   |   1.5 | power | 0.9999941 |
+
+</div>
+
+``` r
 
 #create ggplot
 eg2 %>%
@@ -192,40 +205,41 @@ pwr.2p.test(h=0.3,n=80,sig.level=0.05,alternative="greater")
 #> 
 #> NOTE: same sample sizes
 
-pwr_grid(h=0.3,n=80:90,sig.level=0.05,alternative="greater") %>% 
+pwr_grid(h=0.3,n=seq(80,90,5),sig.level=0.05,alternative="greater") %>% 
   pwr_tidy(test_function = pwr.2p.test)
-#> # A tibble: 11 x 6
-#>        n     h sig.level alternative query power
-#>    <int> <dbl>     <dbl> <chr>       <chr> <dbl>
-#>  1    80   0.3      0.05 greater     power 0.600
-#>  2    81   0.3      0.05 greater     power 0.604
-#>  3    82   0.3      0.05 greater     power 0.609
-#>  4    83   0.3      0.05 greater     power 0.613
-#>  5    84   0.3      0.05 greater     power 0.618
-#>  6    85   0.3      0.05 greater     power 0.622
-#>  7    86   0.3      0.05 greater     power 0.626
-#>  8    87   0.3      0.05 greater     power 0.631
-#>  9    88   0.3      0.05 greater     power 0.635
-#> 10    89   0.3      0.05 greater     power 0.639
-#> 11    90   0.3      0.05 greater     power 0.643
-
-pwr_grid(h=seq(0.3,0.9,0.1),n=80:90,sig.level=0.05,alternative="greater") %>% 
-  pwr_tidy(test_function = pwr.2p.test)
-#> # A tibble: 77 x 6
-#>        n     h sig.level alternative query power
-#>    <int> <dbl>     <dbl> <chr>       <chr> <dbl>
-#>  1    80   0.3      0.05 greater     power 0.600
-#>  2    80   0.4      0.05 greater     power 0.812
-#>  3    80   0.5      0.05 greater     power 0.935
-#>  4    80   0.6      0.05 greater     power 0.984
-#>  5    80   0.7      0.05 greater     power 0.997
-#>  6    80   0.8      0.05 greater     power 1.000
-#>  7    80   0.9      0.05 greater     power 1.000
-#>  8    81   0.3      0.05 greater     power 0.604
-#>  9    81   0.4      0.05 greater     power 0.816
-#> 10    81   0.5      0.05 greater     power 0.938
-#> # ... with 67 more rows
 ```
+
+<div class="kable-table">
+
+|  n |   h | sig.level | alternative | query |     power |
+| -: | --: | --------: | :---------- | :---- | --------: |
+| 80 | 0.3 |      0.05 | greater     | power | 0.5996777 |
+| 85 | 0.3 |      0.05 | greater     | power | 0.6220644 |
+| 90 | 0.3 |      0.05 | greater     | power | 0.6434171 |
+
+</div>
+
+``` r
+
+pwr_grid(h=seq(0.3,0.5,0.1),n=seq(80,90,5),sig.level=0.05,alternative="greater") %>% 
+  pwr_tidy(test_function = pwr.2p.test)
+```
+
+<div class="kable-table">
+
+|  n |   h | sig.level | alternative | query |     power |
+| -: | --: | --------: | :---------- | :---- | --------: |
+| 80 | 0.3 |      0.05 | greater     | power | 0.5996777 |
+| 80 | 0.4 |      0.05 | greater     | power | 0.8119132 |
+| 80 | 0.5 |      0.05 | greater     | power | 0.9354202 |
+| 85 | 0.3 |      0.05 | greater     | power | 0.6220644 |
+| 85 | 0.4 |      0.05 | greater     | power | 0.8321829 |
+| 85 | 0.5 |      0.05 | greater     | power | 0.9468173 |
+| 90 | 0.3 |      0.05 | greater     | power | 0.6434171 |
+| 90 | 0.4 |      0.05 | greater     | power | 0.8504646 |
+| 90 | 0.5 |      0.05 | greater     | power | 0.9562975 |
+
+</div>
 
 ## References
 

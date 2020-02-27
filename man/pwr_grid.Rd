@@ -115,6 +115,6 @@ eg3 \%>\% pwr_tidy(test_function = power.t.test)
 
 eg3 \%>\%
   pwr_tidy(test_function = power.t.test) \%>\%
-  pwr_plot(x = n,y = delta,group=sd)
+  pwr_plot(x = n,y = delta,group=sigma)
 
 }

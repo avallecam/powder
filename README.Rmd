@@ -1,5 +1,7 @@
 ---
-output: github_document
+output: 
+  github_document:
+    df_print: kable
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -70,6 +72,7 @@ This is a basic example which shows you how to solve a common problem:
 ```{r example,eval=TRUE,message=FALSE}
 library(tidyverse)
 library(magrittr)
+library(knitr)
 library(broom)
 library(pwr)
 library(powder)
@@ -141,10 +144,10 @@ eg2 %>%
 #example("pwr.2p.test")
 pwr.2p.test(h=0.3,n=80,sig.level=0.05,alternative="greater")
 
-pwr_grid(h=0.3,n=80:90,sig.level=0.05,alternative="greater") %>% 
+pwr_grid(h=0.3,n=seq(80,90,5),sig.level=0.05,alternative="greater") %>% 
   pwr_tidy(test_function = pwr.2p.test)
 
-pwr_grid(h=seq(0.3,0.9,0.1),n=80:90,sig.level=0.05,alternative="greater") %>% 
+pwr_grid(h=seq(0.3,0.5,0.1),n=seq(80,90,5),sig.level=0.05,alternative="greater") %>% 
   pwr_tidy(test_function = pwr.2p.test)
 ```
 
