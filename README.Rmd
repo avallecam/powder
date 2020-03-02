@@ -30,11 +30,11 @@ knitr::opts_chunk$set(
 
 ## Overview
 
-The goal of `powder` is to complement __power__ and __sample size__ calculations:
+The goal of `powder` is to extend __power__ and __sample size__ calculations:
 
-- for more than one set of parameters, and
+- for _more than one set_ of parameters, and
 
-- create tidy output tables and plots from them.  
+- create tidy output _tables_ and _plots_ from them.  
 
 ## Installation
 
@@ -55,7 +55,29 @@ install.packages("powder")
 
 -->
 
-## Structure
+## Quick example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example,eval=TRUE,message=FALSE}
+library(tidyverse)
+library(broom)
+library(pwr)
+library(powder)
+```
+
+```{r}
+#example("pwr.2p.test")
+pwr.2p.test(h=0.3,n=80,sig.level=0.05,alternative="greater")
+
+pwr_grid(h=0.3,n=seq(80,90,5),sig.level=0.05,alternative="greater") %>% 
+  pwr_tidy(test_function = pwr.2p.test)
+
+pwr_grid(h=seq(0.3,0.5,0.1),n=seq(80,90,5),sig.level=0.05,alternative="greater") %>% 
+  pwr_tidy(test_function = pwr.2p.test)
+```
+
+## Core structure
 
 `powder` consist of three main functions:
 
@@ -65,18 +87,8 @@ install.packages("powder")
 
 - `pwr_plot`: create a `ggplot` with input parameters and calculated value (sample size, power or effect size)
 
-## Example
 
-This is a basic example which shows you how to solve a common problem:
-
-```{r example,eval=TRUE,message=FALSE}
-library(tidyverse)
-library(magrittr)
-library(knitr)
-library(broom)
-library(pwr)
-library(powder)
-```
+## More examples
 
 ### One set of parameters
 
@@ -136,19 +148,6 @@ eg2 %>% pwr_tidy(test_function = pwr.t.test)
 eg2 %>%
   pwr_tidy(test_function = pwr.t.test) %>%
   pwr_plot(x = n,y = power,group=diff)
-```
-
-#### flexible with different `pwr` functions
-
-```{r}
-#example("pwr.2p.test")
-pwr.2p.test(h=0.3,n=80,sig.level=0.05,alternative="greater")
-
-pwr_grid(h=0.3,n=seq(80,90,5),sig.level=0.05,alternative="greater") %>% 
-  pwr_tidy(test_function = pwr.2p.test)
-
-pwr_grid(h=seq(0.3,0.5,0.1),n=seq(80,90,5),sig.level=0.05,alternative="greater") %>% 
-  pwr_tidy(test_function = pwr.2p.test)
 ```
 
 ## References

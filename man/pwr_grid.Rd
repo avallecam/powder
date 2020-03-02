@@ -63,6 +63,7 @@ Create tables and plots for power and sample size calculations from a range of r
 \examples{
 
 library(tidyverse)
+library(broom)
 library(pwr)
 library(powder)
 

@@ -18,12 +18,12 @@ status](https://www.r-pkg.org/badges/version/powder)](https://cran.r-project.org
 
 ## Overview
 
-The goal of `powder` is to complement **power** and **sample size**
+The goal of `powder` is to extend **power** and **sample size**
 calculations:
 
-  - for more than one set of parameters, and
+  - for *more than one set* of parameters, and
 
-  - create tidy output tables and plots from them.
+  - create tidy output *tables* and *plots* from them.
 
 ## Installation
 
@@ -44,7 +44,57 @@ install.packages("powder")
 
 -->
 
-## Structure
+## Quick example
+
+This is a basic example which shows you how to solve a common problem:
+
+``` r
+library(tidyverse)
+library(broom)
+library(pwr)
+library(powder)
+```
+
+``` r
+#example("pwr.2p.test")
+pwr.2p.test(h=0.3,n=80,sig.level=0.05,alternative="greater")
+#> 
+#>      Difference of proportion power calculation for binomial distribution (arcsine transformation) 
+#> 
+#>               h = 0.3
+#>               n = 80
+#>       sig.level = 0.05
+#>           power = 0.5996777
+#>     alternative = greater
+#> 
+#> NOTE: same sample sizes
+
+pwr_grid(h=0.3,n=seq(80,90,5),sig.level=0.05,alternative="greater") %>% 
+  pwr_tidy(test_function = pwr.2p.test)
+#> # A tibble: 3 x 6
+#>       n     h sig.level alternative query power
+#>   <dbl> <dbl>     <dbl> <chr>       <chr> <dbl>
+#> 1    80   0.3      0.05 greater     power 0.600
+#> 2    85   0.3      0.05 greater     power 0.622
+#> 3    90   0.3      0.05 greater     power 0.643
+
+pwr_grid(h=seq(0.3,0.5,0.1),n=seq(80,90,5),sig.level=0.05,alternative="greater") %>% 
+  pwr_tidy(test_function = pwr.2p.test)
+#> # A tibble: 9 x 6
+#>       n     h sig.level alternative query power
+#>   <dbl> <dbl>     <dbl> <chr>       <chr> <dbl>
+#> 1    80   0.3      0.05 greater     power 0.600
+#> 2    80   0.4      0.05 greater     power 0.812
+#> 3    80   0.5      0.05 greater     power 0.935
+#> 4    85   0.3      0.05 greater     power 0.622
+#> 5    85   0.4      0.05 greater     power 0.832
+#> 6    85   0.5      0.05 greater     power 0.947
+#> 7    90   0.3      0.05 greater     power 0.643
+#> 8    90   0.4      0.05 greater     power 0.850
+#> 9    90   0.5      0.05 greater     power 0.956
+```
+
+## Core structure
 
 `powder` consist of three main functions:
 
@@ -57,18 +107,7 @@ install.packages("powder")
   - `pwr_plot`: create a `ggplot` with input parameters and calculated
     value (sample size, power or effect size)
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(tidyverse)
-library(magrittr)
-library(knitr)
-library(broom)
-library(pwr)
-library(powder)
-```
+## More examples
 
 ### One set of parameters
 
@@ -127,7 +166,7 @@ eg1 %>%
   pwr_plot(x = diff,y = n,group = sigma)
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 #### power
 
@@ -159,13 +198,13 @@ eg2 %>% pwr_tidy(test_function = pwr.t.test)
 #>  9    14    15    10      0.05 one.sample two.sided     1.5 power 0.999
 #> 10    16     5    10      0.05 one.sample two.sided     0.5 power 0.465
 #> 11    16    10    10      0.05 one.sample two.sided     1   power 0.962
-#> 12    16    15    10      0.05 one.sample two.sided     1.5 power 1.000
+#> 12    16    15    10      0.05 one.sample two.sided     1.5 power 1.00 
 #> 13    18     5    10      0.05 one.sample two.sided     0.5 power 0.516
 #> 14    18    10    10      0.05 one.sample two.sided     1   power 0.979
-#> 15    18    15    10      0.05 one.sample two.sided     1.5 power 1.000
+#> 15    18    15    10      0.05 one.sample two.sided     1.5 power 1.00 
 #> 16    20     5    10      0.05 one.sample two.sided     0.5 power 0.565
 #> 17    20    10    10      0.05 one.sample two.sided     1   power 0.989
-#> 18    20    15    10      0.05 one.sample two.sided     1.5 power 1.000
+#> 18    20    15    10      0.05 one.sample two.sided     1.5 power 1.00
 
 #create ggplot
 eg2 %>%
@@ -173,48 +212,7 @@ eg2 %>%
   pwr_plot(x = n,y = power,group=diff)
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
-
-#### flexible with different `pwr` functions
-
-``` r
-#example("pwr.2p.test")
-pwr.2p.test(h=0.3,n=80,sig.level=0.05,alternative="greater")
-#> 
-#>      Difference of proportion power calculation for binomial distribution (arcsine transformation) 
-#> 
-#>               h = 0.3
-#>               n = 80
-#>       sig.level = 0.05
-#>           power = 0.5996777
-#>     alternative = greater
-#> 
-#> NOTE: same sample sizes
-
-pwr_grid(h=0.3,n=seq(80,90,5),sig.level=0.05,alternative="greater") %>% 
-  pwr_tidy(test_function = pwr.2p.test)
-#> # A tibble: 3 x 6
-#>       n     h sig.level alternative query power
-#>   <dbl> <dbl>     <dbl> <chr>       <chr> <dbl>
-#> 1    80   0.3      0.05 greater     power 0.600
-#> 2    85   0.3      0.05 greater     power 0.622
-#> 3    90   0.3      0.05 greater     power 0.643
-
-pwr_grid(h=seq(0.3,0.5,0.1),n=seq(80,90,5),sig.level=0.05,alternative="greater") %>% 
-  pwr_tidy(test_function = pwr.2p.test)
-#> # A tibble: 9 x 6
-#>       n     h sig.level alternative query power
-#>   <dbl> <dbl>     <dbl> <chr>       <chr> <dbl>
-#> 1    80   0.3      0.05 greater     power 0.600
-#> 2    80   0.4      0.05 greater     power 0.812
-#> 3    80   0.5      0.05 greater     power 0.935
-#> 4    85   0.3      0.05 greater     power 0.622
-#> 5    85   0.4      0.05 greater     power 0.832
-#> 6    85   0.5      0.05 greater     power 0.947
-#> 7    90   0.3      0.05 greater     power 0.643
-#> 8    90   0.4      0.05 greater     power 0.850
-#> 9    90   0.5      0.05 greater     power 0.956
-```
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 ## References
 

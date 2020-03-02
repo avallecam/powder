@@ -29,6 +29,7 @@
 #' @examples
 #'
 #' library(tidyverse)
+#' library(broom)
 #' library(pwr)
 #' library(powder)
 #'
