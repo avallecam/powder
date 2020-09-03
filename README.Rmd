@@ -26,6 +26,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/powder)](https://cran.r-project.org/package=powder)
+[![DOI](https://zenodo.org/badge/240771164.svg)](https://zenodo.org/badge/latestdoi/240771164)
 <!-- badges: end -->
 
 ## Overview
