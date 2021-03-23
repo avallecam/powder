@@ -8,23 +8,29 @@
 
 <title>powder: A Tidy Extension for Power Analysis — pwr_grid • powder</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -32,10 +38,10 @@
 
 
 
-<meta property="og:title" content="powder: A Tidy Extension for Power Analysis — pwr_grid" />
 
+<meta property="og:title" content="powder: A Tidy Extension for Power Analysis — pwr_grid" />
 <meta property="og:description" content="Create tables and plots for power and sample size calculations from a range of required parameters. All of the parameters accepts a range or sequence of numbers. Usable with pwr and stats::power." />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -52,7 +58,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -74,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -82,9 +88,13 @@
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/avallecam/powder/">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -99,26 +109,41 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>powder: A Tidy Extension for Power Analysis</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/avallecam/powder/blob/master/R/pwr_powder.R'><code>R/pwr_powder.R</code></a></small>
     <div class="hidden name"><code>pwr_grid.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    
     <p>Create tables and plots for power and sample size calculations from a range of required parameters. All of the parameters accepts a range or sequence of numbers. Usable with pwr and stats::power.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>pwr_grid</span>(<span class='kw'>k</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>n1</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>n2</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>N</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>h</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>f</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>f2</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>r</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>w</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>diff</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>sigma</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>d</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>df</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>u</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>v</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>sig.level</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='kw'>power</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>alternative</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'>pwr_grid</span><span class='op'>(</span>
+  k <span class='op'>=</span> <span class='cn'>NULL</span>,
+  n <span class='op'>=</span> <span class='cn'>NULL</span>,
+  n1 <span class='op'>=</span> <span class='cn'>NULL</span>,
+  n2 <span class='op'>=</span> <span class='cn'>NULL</span>,
+  N <span class='op'>=</span> <span class='cn'>NULL</span>,
+  h <span class='op'>=</span> <span class='cn'>NULL</span>,
+  f <span class='op'>=</span> <span class='cn'>NULL</span>,
+  f2 <span class='op'>=</span> <span class='cn'>NULL</span>,
+  r <span class='op'>=</span> <span class='cn'>NULL</span>,
+  w <span class='op'>=</span> <span class='cn'>NULL</span>,
+  diff <span class='op'>=</span> <span class='cn'>NULL</span>,
+  sigma <span class='op'>=</span> <span class='cn'>NULL</span>,
+  d <span class='op'>=</span> <span class='cn'>NULL</span>,
+  df <span class='op'>=</span> <span class='cn'>NULL</span>,
+  u <span class='op'>=</span> <span class='cn'>NULL</span>,
+  v <span class='op'>=</span> <span class='cn'>NULL</span>,
+  sig.level <span class='op'>=</span> <span class='fl'>0.05</span>,
+  power <span class='op'>=</span> <span class='cn'>NULL</span>,
+  type <span class='op'>=</span> <span class='cn'>NULL</span>,
+  alternative <span class='op'>=</span> <span class='cn'>NULL</span>
+<span class='op'>)</span>
 
-<span class='fu'>pwr_tidy</span>(<span class='no'>pwr_grid</span>, <span class='no'>test_function</span>)
+<span class='fu'>pwr_tidy</span><span class='op'>(</span><span class='va'>pwr_grid</span>, <span class='va'>test_function</span><span class='op'>)</span>
 
-<span class='fu'>pwr_plot</span>(<span class='no'>pwr_tidy</span>, <span class='no'>x</span>, <span class='no'>y</span>, <span class='no'>group</span>)</pre>
-    
+<span class='fu'>pwr_plot</span><span class='op'>(</span><span class='va'>pwr_tidy</span>, <span class='va'>x</span>, <span class='va'>y</span>, <span class='va'>group</span><span class='op'>)</span></pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -179,11 +204,10 @@
       <td><p>colour variable</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>canal endemico, union y grafico</p>
-    
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
     
@@ -192,120 +216,274 @@
 <li><p><code>pwr_tidy</code>: create table with parameters and calculations</p></li>
 <li><p><code>pwr_plot</code>: create diagnostic plot</p></li>
 </ul>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>tidyverse</span>)</div><div class='output co'>#&gt; <span class='message'>-- <span style='font-weight: bold;'>Attaching packages</span><span> -------------------------------------------------- tidyverse 1.2.1 --</span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>ggplot2</span><span> 3.2.1     </span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>purrr  </span><span> 0.3.3</span>
-#&gt; <span class='message'></span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>tibble </span><span> 2.1.3     </span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>dplyr  </span><span> 0.8.4</span>
-#&gt; <span class='message'></span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>tidyr  </span><span> 1.0.0     </span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>stringr</span><span> 1.4.0</span>
-#&gt; <span class='message'></span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>readr  </span><span> 1.3.1     </span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>forcats</span><span> 0.4.0</span></div><div class='output co'>#&gt; <span class='message'>-- </span><span style='font-weight: bold;'>Conflicts</span><span> ----------------------------------------------------- tidyverse_conflicts() --</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: package 'tidyverse' was built under R version 4.0.4</span></div><div class='output co'>#&gt; <span class='message'>-- <span style='font-weight: bold;'>Attaching packages</span><span> --------------------------------------- tidyverse 1.3.0 --</span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>ggplot2</span><span> 3.3.3     </span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>purrr  </span><span> 0.3.4</span>
+#&gt; <span class='message'></span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>tibble </span><span> 3.0.4     </span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>dplyr  </span><span> 1.0.2</span>
+#&gt; <span class='message'></span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>tidyr  </span><span> 1.1.2     </span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>stringr</span><span> 1.4.0</span>
+#&gt; <span class='message'></span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>readr  </span><span> 1.4.0     </span><span style='color: #00BB00;'>v</span><span> </span><span style='color: #0000BB;'>forcats</span><span> 0.5.0</span></div><div class='output co'>#&gt; <span class='message'>-- </span><span style='font-weight: bold;'>Conflicts</span><span> ------------------------------------------ tidyverse_conflicts() --</span>
 #&gt; <span class='message'></span><span style='color: #BB0000;'>x</span><span> </span><span style='color: #0000BB;'>dplyr</span><span>::</span><span style='color: #00BB00;'>filter()</span><span> masks </span><span style='color: #0000BB;'>stats</span><span>::filter()</span>
-#&gt; <span class='message'></span><span style='color: #BB0000;'>x</span><span> </span><span style='color: #0000BB;'>dplyr</span><span>::</span><span style='color: #00BB00;'>lag()</span><span>    masks </span><span style='color: #0000BB;'>stats</span><span>::lag()</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>broom</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>pwr</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>powder</span>)
+#&gt; <span class='message'></span><span style='color: #BB0000;'>x</span><span> </span><span style='color: #0000BB;'>dplyr</span><span>::</span><span style='color: #00BB00;'>lag()</span><span>    masks </span><span style='color: #0000BB;'>stats</span><span>::lag()</span></div><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://broom.tidymodels.org/'>broom</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/heliosdrm/pwr'>pwr</a></span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: package 'pwr' was built under R version 4.0.4</span></div><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://avallecam.github.io/powder/'>powder</a></span><span class='op'>)</span>
 
 <span class='co'># stata</span>
 <span class='co'># power onemean 20, diff(10 20 30) sd(10 12.5 15)</span>
-<span class='no'>eg1</span> <span class='kw'>&lt;-</span> <span class='fu'>pwr_grid</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-                <span class='kw'>diff</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>,<span class='fl'>20</span>,<span class='fl'>30</span>),
-                <span class='kw'>sigma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>,<span class='fl'>12.5</span>,<span class='fl'>15</span>),
-                <span class='kw'>d</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-                <span class='kw'>sig.level</span> <span class='kw'>=</span> <span class='fl'>0.05</span>,
-                <span class='kw'>power</span> <span class='kw'>=</span> <span class='fl'>0.8</span>,
-                <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"one.sample"</span>,
-                <span class='kw'>alternative</span> <span class='kw'>=</span> <span class='st'>"two.sided"</span>)
+<span class='va'>eg1</span> <span class='op'>&lt;-</span> <span class='fu'>pwr_grid</span><span class='op'>(</span>n <span class='op'>=</span> <span class='cn'>NULL</span>,
+                diff <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>10</span>,<span class='fl'>20</span>,<span class='fl'>30</span><span class='op'>)</span>,
+                sigma <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>10</span>,<span class='fl'>12.5</span>,<span class='fl'>15</span><span class='op'>)</span>,
+                d <span class='op'>=</span> <span class='cn'>NULL</span>,
+                sig.level <span class='op'>=</span> <span class='fl'>0.05</span>,
+                power <span class='op'>=</span> <span class='fl'>0.8</span>,
+                type <span class='op'>=</span> <span class='st'>"one.sample"</span>,
+                alternative <span class='op'>=</span> <span class='st'>"two.sided"</span><span class='op'>)</span>
 
-<span class='no'>eg1</span> <span class='kw'>%&gt;%</span> <span class='fu'>pwr_tidy</span>(<span class='kw'>test_function</span> <span class='kw'>=</span> <span class='no'>pwr.t.test</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `n`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 9 x 9</span><span>
+<span class='va'>eg1</span> <span class='op'>%&gt;%</span> <span class='fu'>pwr_tidy</span><span class='op'>(</span>test_function <span class='op'>=</span> <span class='va'>pwr.t.test</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_rawh`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `n`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_rawh` is `pmap(.l = select(., one_of(list_names)), .f = test_function)`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `n`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 9 x 9</span><span>
 #&gt;    diff sigma sig.level power type       alternative delta query     n
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>    10  10        0.05   0.8 one.sample two.sided   1     n      9.94
-#&gt; </span><span style='color: #555555;'>2</span><span>    10  12.5      0.05   0.8 one.sample two.sided   0.8   n     14.3 
-#&gt; </span><span style='color: #555555;'>3</span><span>    10  15        0.05   0.8 one.sample two.sided   0.667 n     19.7 
-#&gt; </span><span style='color: #555555;'>4</span><span>    20  10        0.05   0.8 one.sample two.sided   2     n      4.22
-#&gt; </span><span style='color: #555555;'>5</span><span>    20  12.5      0.05   0.8 one.sample two.sided   1.6   n      5.28
-#&gt; </span><span style='color: #555555;'>6</span><span>    20  15        0.05   0.8 one.sample two.sided   1.33  n      6.58
-#&gt; </span><span style='color: #555555;'>7</span><span>    30  10        0.05   0.8 one.sample two.sided   3     n      3.14
-#&gt; </span><span style='color: #555555;'>8</span><span>    30  12.5      0.05   0.8 one.sample two.sided   2.4   n      3.64
-#&gt; </span><span style='color: #555555;'>9</span><span>    30  15        0.05   0.8 one.sample two.sided   2     n      4.22</div><div class='input'>
-<span class='no'>eg1</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>pwr_tidy</span>(<span class='kw'>test_function</span> <span class='kw'>=</span> <span class='no'>pwr.t.test</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>pwr_plot</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>diff</span>,<span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>n</span>,<span class='kw'>group</span> <span class='kw'>=</span> <span class='no'>sigma</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `n`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='img'><img src='pwr_grid-1.png' alt='' width='700' height='433' /></div><div class='input'>
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span>    10  10        0.05   0.8 one.sample two.sided   1     n      9.94
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span>    10  12.5      0.05   0.8 one.sample two.sided   0.8   n     14.3 
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span>    10  15        0.05   0.8 one.sample two.sided   0.667 n     19.7 
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span>    20  10        0.05   0.8 one.sample two.sided   2     n      4.22
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span>    20  12.5      0.05   0.8 one.sample two.sided   1.6   n      5.28
+#&gt; </span><span style='color: #BCBCBC;'>6</span><span>    20  15        0.05   0.8 one.sample two.sided   1.33  n      6.58
+#&gt; </span><span style='color: #BCBCBC;'>7</span><span>    30  10        0.05   0.8 one.sample two.sided   3     n      3.14
+#&gt; </span><span style='color: #BCBCBC;'>8</span><span>    30  12.5      0.05   0.8 one.sample two.sided   2.4   n      3.64
+#&gt; </span><span style='color: #BCBCBC;'>9</span><span>    30  15        0.05   0.8 one.sample two.sided   2     n      4.22</div><div class='input'>
+<span class='va'>eg1</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>pwr_tidy</span><span class='op'>(</span>test_function <span class='op'>=</span> <span class='va'>pwr.t.test</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>pwr_plot</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>diff</span>,y <span class='op'>=</span> <span class='va'>n</span>,group <span class='op'>=</span> <span class='va'>sigma</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_rawh`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `n`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_rawh` is `pmap(.l = select(., one_of(list_names)), .f = test_function)`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `n`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='img'><img src='pwr_grid-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># stata</span>
 <span class='co'># power onemean 20, diff(5 (5) 15) sd(10) n(10 (2) 20)</span>
-<span class='no'>eg2</span> <span class='kw'>&lt;-</span> <span class='fu'>pwr_grid</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='fl'>10</span>,<span class='kw'>to</span> <span class='kw'>=</span> <span class='fl'>20</span>,<span class='kw'>by</span> <span class='kw'>=</span> <span class='fl'>2</span>),
-                <span class='kw'>diff</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='fl'>5</span>,<span class='kw'>to</span> <span class='kw'>=</span> <span class='fl'>15</span>,<span class='kw'>by</span> <span class='kw'>=</span> <span class='fl'>5</span>),
-                <span class='kw'>sigma</span> <span class='kw'>=</span> <span class='fl'>10</span>,
-                <span class='kw'>d</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-                <span class='kw'>sig.level</span> <span class='kw'>=</span> <span class='fl'>0.05</span>,
+<span class='va'>eg2</span> <span class='op'>&lt;-</span> <span class='fu'>pwr_grid</span><span class='op'>(</span>n <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from <span class='op'>=</span> <span class='fl'>10</span>,to <span class='op'>=</span> <span class='fl'>20</span>,by <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>,
+                diff <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from <span class='op'>=</span> <span class='fl'>5</span>,to <span class='op'>=</span> <span class='fl'>15</span>,by <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>,
+                sigma <span class='op'>=</span> <span class='fl'>10</span>,
+                d <span class='op'>=</span> <span class='cn'>NULL</span>,
+                sig.level <span class='op'>=</span> <span class='fl'>0.05</span>,
                 <span class='co'>#power = 0.8,</span>
-                <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"one.sample"</span>,
-                <span class='kw'>alternative</span> <span class='kw'>=</span> <span class='st'>"two.sided"</span>)
+                type <span class='op'>=</span> <span class='st'>"one.sample"</span>,
+                alternative <span class='op'>=</span> <span class='st'>"two.sided"</span><span class='op'>)</span>
 
-<span class='no'>eg2</span> <span class='kw'>%&gt;%</span> <span class='fu'>pwr_tidy</span>(<span class='kw'>test_function</span> <span class='kw'>=</span> <span class='no'>pwr.t.test</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `power`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 18 x 9</span><span>
+<span class='va'>eg2</span> <span class='op'>%&gt;%</span> <span class='fu'>pwr_tidy</span><span class='op'>(</span>test_function <span class='op'>=</span> <span class='va'>pwr.t.test</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_rawh`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `power`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_rawh` is `pmap(.l = select(., one_of(list_names)), .f = test_function)`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `power`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 18 x 9</span><span>
 #&gt;        n  diff sigma sig.level type       alternative delta query power
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span>    10     5    10      0.05 one.sample two.sided     0.5 power 0.293
-#&gt; </span><span style='color: #555555;'> 2</span><span>    10    10    10      0.05 one.sample two.sided     1   power 0.803
-#&gt; </span><span style='color: #555555;'> 3</span><span>    10    15    10      0.05 one.sample two.sided     1.5 power 0.987
-#&gt; </span><span style='color: #555555;'> 4</span><span>    12     5    10      0.05 one.sample two.sided     0.5 power 0.353
-#&gt; </span><span style='color: #555555;'> 5</span><span>    12    10    10      0.05 one.sample two.sided     1   power 0.883
-#&gt; </span><span style='color: #555555;'> 6</span><span>    12    15    10      0.05 one.sample two.sided     1.5 power 0.997
-#&gt; </span><span style='color: #555555;'> 7</span><span>    14     5    10      0.05 one.sample two.sided     0.5 power 0.410
-#&gt; </span><span style='color: #555555;'> 8</span><span>    14    10    10      0.05 one.sample two.sided     1   power 0.932
-#&gt; </span><span style='color: #555555;'> 9</span><span>    14    15    10      0.05 one.sample two.sided     1.5 power 0.999
-#&gt; </span><span style='color: #555555;'>10</span><span>    16     5    10      0.05 one.sample two.sided     0.5 power 0.465
-#&gt; </span><span style='color: #555555;'>11</span><span>    16    10    10      0.05 one.sample two.sided     1   power 0.962
-#&gt; </span><span style='color: #555555;'>12</span><span>    16    15    10      0.05 one.sample two.sided     1.5 power 1.00 
-#&gt; </span><span style='color: #555555;'>13</span><span>    18     5    10      0.05 one.sample two.sided     0.5 power 0.516
-#&gt; </span><span style='color: #555555;'>14</span><span>    18    10    10      0.05 one.sample two.sided     1   power 0.979
-#&gt; </span><span style='color: #555555;'>15</span><span>    18    15    10      0.05 one.sample two.sided     1.5 power 1.00 
-#&gt; </span><span style='color: #555555;'>16</span><span>    20     5    10      0.05 one.sample two.sided     0.5 power 0.565
-#&gt; </span><span style='color: #555555;'>17</span><span>    20    10    10      0.05 one.sample two.sided     1   power 0.989
-#&gt; </span><span style='color: #555555;'>18</span><span>    20    15    10      0.05 one.sample two.sided     1.5 power 1.00 </div><div class='input'>
-<span class='no'>eg2</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>pwr_tidy</span>(<span class='kw'>test_function</span> <span class='kw'>=</span> <span class='no'>pwr.t.test</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>pwr_plot</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>n</span>,<span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>power</span>,<span class='kw'>group</span><span class='kw'>=</span><span class='no'>diff</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `power`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='img'><img src='pwr_grid-2.png' alt='' width='700' height='433' /></div><div class='input'>
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span>    10     5    10      0.05 one.sample two.sided     0.5 power 0.293
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span>    10    10    10      0.05 one.sample two.sided     1   power 0.803
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span>    10    15    10      0.05 one.sample two.sided     1.5 power 0.987
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span>    12     5    10      0.05 one.sample two.sided     0.5 power 0.353
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span>    12    10    10      0.05 one.sample two.sided     1   power 0.883
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span>    12    15    10      0.05 one.sample two.sided     1.5 power 0.997
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span>    14     5    10      0.05 one.sample two.sided     0.5 power 0.410
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span>    14    10    10      0.05 one.sample two.sided     1   power 0.932
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span>    14    15    10      0.05 one.sample two.sided     1.5 power 0.999
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span>    16     5    10      0.05 one.sample two.sided     0.5 power 0.465
+#&gt; </span><span style='color: #BCBCBC;'>11</span><span>    16    10    10      0.05 one.sample two.sided     1   power 0.962
+#&gt; </span><span style='color: #BCBCBC;'>12</span><span>    16    15    10      0.05 one.sample two.sided     1.5 power 1.00 
+#&gt; </span><span style='color: #BCBCBC;'>13</span><span>    18     5    10      0.05 one.sample two.sided     0.5 power 0.516
+#&gt; </span><span style='color: #BCBCBC;'>14</span><span>    18    10    10      0.05 one.sample two.sided     1   power 0.979
+#&gt; </span><span style='color: #BCBCBC;'>15</span><span>    18    15    10      0.05 one.sample two.sided     1.5 power 1.00 
+#&gt; </span><span style='color: #BCBCBC;'>16</span><span>    20     5    10      0.05 one.sample two.sided     0.5 power 0.565
+#&gt; </span><span style='color: #BCBCBC;'>17</span><span>    20    10    10      0.05 one.sample two.sided     1   power 0.989
+#&gt; </span><span style='color: #BCBCBC;'>18</span><span>    20    15    10      0.05 one.sample two.sided     1.5 power 1.00 </div><div class='input'>
+<span class='va'>eg2</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>pwr_tidy</span><span class='op'>(</span>test_function <span class='op'>=</span> <span class='va'>pwr.t.test</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>pwr_plot</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>n</span>,y <span class='op'>=</span> <span class='va'>power</span>,group<span class='op'>=</span><span class='va'>diff</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_rawh`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `power`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_rawh` is `pmap(.l = select(., one_of(list_names)), .f = test_function)`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `power`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `d`, `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `d`, `type`, `alternative`</span></div><div class='img'><img src='pwr_grid-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># stata</span>
 <span class='co'># power onemean 100, n(10 20 30) power(0.8) sd(10 12.5 15)</span>
-<span class='no'>eg3</span> <span class='kw'>&lt;-</span> <span class='fu'>pwr_grid</span>(<span class='kw'>n</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>,<span class='fl'>20</span>,<span class='fl'>30</span>),
+<span class='va'>eg3</span> <span class='op'>&lt;-</span> <span class='fu'>pwr_grid</span><span class='op'>(</span>n<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>10</span>,<span class='fl'>20</span>,<span class='fl'>30</span><span class='op'>)</span>,
                 <span class='co'>#diff=c(10,20,30),</span>
-                <span class='kw'>sigma</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>,<span class='fl'>12.5</span>,<span class='fl'>15</span>),
-                <span class='kw'>d</span><span class='kw'>=</span><span class='kw'>NULL</span>,
-                <span class='kw'>sig.level</span><span class='kw'>=</span><span class='fl'>0.05</span>,
-                <span class='kw'>power</span><span class='kw'>=</span><span class='fl'>0.8</span>,
-                <span class='kw'>type</span><span class='kw'>=</span><span class='st'>"one.sample"</span>,
-                <span class='kw'>alternative</span><span class='kw'>=</span><span class='st'>"two.sided"</span>)
+                sigma<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>10</span>,<span class='fl'>12.5</span>,<span class='fl'>15</span><span class='op'>)</span>,
+                d<span class='op'>=</span><span class='cn'>NULL</span>,
+                sig.level<span class='op'>=</span><span class='fl'>0.05</span>,
+                power<span class='op'>=</span><span class='fl'>0.8</span>,
+                type<span class='op'>=</span><span class='st'>"one.sample"</span>,
+                alternative<span class='op'>=</span><span class='st'>"two.sided"</span><span class='op'>)</span>
 
-<span class='no'>eg3</span> <span class='kw'>%&gt;%</span> <span class='fu'>pwr_tidy</span>(<span class='kw'>test_function</span> <span class='kw'>=</span> <span class='no'>power.t.test</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `delta`, `strict`, `tol`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 9 x 8</span><span>
+<span class='va'>eg3</span> <span class='op'>%&gt;%</span> <span class='fu'>pwr_tidy</span><span class='op'>(</span>test_function <span class='op'>=</span> <span class='va'>power.t.test</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_rawh`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `delta`, `strict`, `tol`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_rawh` is `pmap(.l = select(., one_of(list_names)), .f = test_function)`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `delta`, `strict`, `tol`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 9 x 8</span><span>
 #&gt;       n sigma sig.level power type       alternative query delta
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>    10  10        0.05   0.8 one.sample two.sided   delta  9.96
-#&gt; </span><span style='color: #555555;'>2</span><span>    10  12.5      0.05   0.8 one.sample two.sided   delta 12.5 
-#&gt; </span><span style='color: #555555;'>3</span><span>    10  15        0.05   0.8 one.sample two.sided   delta 14.9 
-#&gt; </span><span style='color: #555555;'>4</span><span>    20  10        0.05   0.8 one.sample two.sided   delta  6.60
-#&gt; </span><span style='color: #555555;'>5</span><span>    20  12.5      0.05   0.8 one.sample two.sided   delta  8.26
-#&gt; </span><span style='color: #555555;'>6</span><span>    20  15        0.05   0.8 one.sample two.sided   delta  9.91
-#&gt; </span><span style='color: #555555;'>7</span><span>    30  10        0.05   0.8 one.sample two.sided   delta  5.29
-#&gt; </span><span style='color: #555555;'>8</span><span>    30  12.5      0.05   0.8 one.sample two.sided   delta  6.62
-#&gt; </span><span style='color: #555555;'>9</span><span>    30  15        0.05   0.8 one.sample two.sided   delta  7.94</div><div class='input'>
-<span class='no'>eg3</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>pwr_tidy</span>(<span class='kw'>test_function</span> <span class='kw'>=</span> <span class='no'>power.t.test</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>pwr_plot</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>n</span>,<span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>delta</span>,<span class='kw'>group</span><span class='kw'>=</span><span class='no'>sigma</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `delta`, `strict`, `tol`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='img'><img src='pwr_grid-3.png' alt='' width='700' height='433' /></div><div class='input'>
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span>    10  10        0.05   0.8 one.sample two.sided   delta  9.96
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span>    10  12.5      0.05   0.8 one.sample two.sided   delta 12.5 
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span>    10  15        0.05   0.8 one.sample two.sided   delta 14.9 
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span>    20  10        0.05   0.8 one.sample two.sided   delta  6.60
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span>    20  12.5      0.05   0.8 one.sample two.sided   delta  8.26
+#&gt; </span><span style='color: #BCBCBC;'>6</span><span>    20  15        0.05   0.8 one.sample two.sided   delta  9.91
+#&gt; </span><span style='color: #BCBCBC;'>7</span><span>    30  10        0.05   0.8 one.sample two.sided   delta  5.29
+#&gt; </span><span style='color: #BCBCBC;'>8</span><span>    30  12.5      0.05   0.8 one.sample two.sided   delta  6.62
+#&gt; </span><span style='color: #BCBCBC;'>9</span><span>    30  15        0.05   0.8 one.sample two.sided   delta  7.94</div><div class='input'>
+<span class='va'>eg3</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>pwr_tidy</span><span class='op'>(</span>test_function <span class='op'>=</span> <span class='va'>power.t.test</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>pwr_plot</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>n</span>,y <span class='op'>=</span> <span class='va'>delta</span>,group<span class='op'>=</span><span class='va'>sigma</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_rawh`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `delta`, `strict`, `tol`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_rawh` is `pmap(.l = select(., one_of(list_names)), .f = test_function)`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `delta`, `strict`, `tol`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Problem with `mutate()` input `pwr_tidy`.</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Unknown columns: `type`, `alternative`</span>
+#&gt; <span class='warning'></span><span style='color: #0000BB;'>i</span><span> Input `pwr_tidy` is `map(.x = pwr_tidy, .f = ~select(.x, -one_of(intersect_names)))`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `type`, `alternative`</span></div><div class='img'><img src='pwr_grid-3.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></span></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#functions">Functions</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -316,7 +494,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
