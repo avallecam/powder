@@ -19,13 +19,14 @@ knitr::opts_chunk$set(
 # powder
 
 **Author:** [Andree Valle Campos](https://twitter.com/avallecam) <a href="https://orcid.org/0000-0002-7779-481X" target="orcid.widget">
-<image class="orcid" src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" height="16"></a>
+<image class="orcid" src="https://info.orcid.org/wp-content/uploads/2020/12/orcid_16x16.gif" height="16"></a>
 <br/>
 **License:** [MIT](https://opensource.org/licenses/MIT)<br/>
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/powder)](https://cran.r-project.org/package=powder)
+[![DOI](https://zenodo.org/badge/240771164.svg)](https://zenodo.org/badge/latestdoi/240771164)
 <!-- badges: end -->
 
 ## Overview

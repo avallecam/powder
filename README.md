@@ -5,7 +5,7 @@
 
 **Author:** [Andree Valle Campos](https://twitter.com/avallecam)
 <a href="https://orcid.org/0000-0002-7779-481X" target="orcid.widget">
-<image class="orcid" src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" height="16"></a>
+<image class="orcid" src="https://info.orcid.org/wp-content/uploads/2020/12/orcid_16x16.gif" height="16"></a>
 <br/> **License:** [MIT](https://opensource.org/licenses/MIT)<br/>
 
 <!-- badges: start -->
@@ -14,6 +14,7 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/powder)](https://cran.r-project.org/package=powder)
+[![DOI](https://zenodo.org/badge/240771164.svg)](https://zenodo.org/badge/latestdoi/240771164)
 <!-- badges: end -->
 
 ## Overview
@@ -21,9 +22,9 @@ status](https://www.r-pkg.org/badges/version/powder)](https://cran.r-project.org
 The goal of `powder` is to extend **power** and **sample size**
 calculations:
 
-  - for *more than one set* of parameters, and
+-   for *more than one set* of parameters, and
 
-  - create tidy output *tables* and *plots* from them.
+-   create tidy output *tables* and *plots* from them.
 
 ## Installation
 
@@ -98,13 +99,13 @@ pwr_grid(h=seq(0.3,0.5,0.1),n=seq(80,90,5),sig.level=0.05,alternative="greater")
 
 `powder` consist of three main functions:
 
-  - `pwr_grid`: creates a tibble from all combination of input
+-   `pwr_grid`: creates a tibble from all combination of input
     parameters using `tidyr::expand_grid`.
 
-  - `pwr_tidy`: creates a `broom::tidy()` output from the calculations
+-   `pwr_tidy`: creates a `broom::tidy()` output from the calculations
     of all input parameters using `purrr::pmap`.
 
-  - `pwr_plot`: create a `ggplot` with input parameters and calculated
+-   `pwr_plot`: create a `ggplot` with input parameters and calculated
     value (sample size, power or effect size)
 
 ## More examples
@@ -224,19 +225,22 @@ package version 1.2-2. <https://CRAN.R-project.org/package=pwr>
 ``` r
 citation("powder")
 #> 
-#> To cite package 'powder' in publications use:
+#> To cite powder in publications use:
 #> 
 #>   Andree Valle-Campos (2020). powder: A Tidy Extension for Power
-#>   Analysis. R package version 0.0.0.9000.
-#>   https://avallecam.github.io/powder/
+#>   Analysis. R package version 1.0. doi: 10.5281/zenodo.4014201. url:
+#>   https://avallecam.github.io/powder/.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
 #>   @Manual{,
 #>     title = {powder: A Tidy Extension for Power Analysis},
 #>     author = {Andree Valle-Campos},
+#>     month = {sep},
 #>     year = {2020},
-#>     note = {R package version 0.0.0.9000},
+#>     publisher = {Zenodo},
+#>     version = {v1.0},
+#>     doi = {10.5281/zenodo.4014201},
 #>     url = {https://avallecam.github.io/powder/},
 #>   }
 ```

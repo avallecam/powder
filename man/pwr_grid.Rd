@@ -6,11 +6,28 @@
 \alias{pwr_plot}
 \title{powder: A Tidy Extension for Power Analysis}
 \usage{
-pwr_grid(k = NULL, n = NULL, n1 = NULL, n2 = NULL, N = NULL,
-  h = NULL, f = NULL, f2 = NULL, r = NULL, w = NULL,
-  diff = NULL, sigma = NULL, d = NULL, df = NULL, u = NULL,
-  v = NULL, sig.level = 0.05, power = NULL, type = NULL,
-  alternative = NULL)
+pwr_grid(
+  k = NULL,
+  n = NULL,
+  n1 = NULL,
+  n2 = NULL,
+  N = NULL,
+  h = NULL,
+  f = NULL,
+  f2 = NULL,
+  r = NULL,
+  w = NULL,
+  diff = NULL,
+  sigma = NULL,
+  d = NULL,
+  df = NULL,
+  u = NULL,
+  v = NULL,
+  sig.level = 0.05,
+  power = NULL,
+  type = NULL,
+  alternative = NULL
+)
 
 pwr_tidy(pwr_grid, test_function)
 

@@ -1,0 +1,20 @@
+citHeader("To cite powder in publications use:")
+
+citEntry(
+  entry    = "Manual",
+  title    = "powder: A Tidy Extension for Power Analysis",
+  author   = "Andree Valle-Campos",
+  month        = "sep",
+  year         = "2020",
+  publisher    = "Zenodo",
+  version      = "v1.0",
+  doi          = "10.5281/zenodo.4014201",
+  url          = "https://avallecam.github.io/powder/",
+  textVersion = paste(
+  "Andree Valle-Campos (2020).",
+  "powder: A Tidy Extension for Power Analysis.",
+  "R package version 1.0.",
+  "doi: 10.5281/zenodo.4014201.",
+  "url: https://avallecam.github.io/powder/."
+  )
+)
